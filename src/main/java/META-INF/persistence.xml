@@ -16,9 +16,11 @@
         <class>dataclassesHib.Notification</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-             		<property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=ppe;integratedSecurity=true"/>
+             		<property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=ppe;encrypt=false"/>
       				<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
            			<property name="hibernate.show_sql" value="true"/>
+            <property name="javax.persistence.jdbc.password" value="123!"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
            			<property name="hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
