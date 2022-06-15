@@ -1,0 +1,76 @@
+tr {
+    border: none !important;
+}
+
+th {
+    border: none !important;
+    border-right: 2px solid var(--border) !important;
+}
+
+td {
+    border-bottom: 2px solid var(--border) !important;
+}
+
+thead {
+    color: #444444 !important;
+
+}
+
+.table, .material-icons-outlined {
+    font-size: 1vw;
+}
+
+.tableheader {
+    margin: 0% !important;
+}
+
+.allPP {
+    width: 100%;
+    padding: 1%;
+    margin-bottom: 0.5%;
+    /*background-color: var(--white);*/
+    /*border: 1px solid var(--border);*/
+    font-size: 80%;
+}
+
+.row {
+    margin-top: 0% !important;
+    margin-right: 0% !important;
+    margin-left: 0% !important;
+}
+
+.allpphead {
+    border-right: 2px solid var(--border) !important;
+    border-color: #444444 !important;
+}
+
+.allppbody {
+    border-right: 2px solid var(--border) !important;
+    border-color: #CCCCCC !important;
+}
+
+.allppentry {
+    height: 65px !important;
+}
+
+.delete {
+    background: var(--white);
+    float: right;
+    border: none;
+}
+
+.confirm {
+    background: var(--white);
+    border: none;
+    text-align: center;
+}
+
+.confirmicon {
+    height: 3%;
+}
+
+.edit {
+    background: var(--white);
+    float: right;
+    border: none;
+}

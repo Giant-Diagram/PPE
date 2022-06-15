@@ -1,0 +1,1 @@
+const locationServlet = 'AddUserServlet';

@@ -1,0 +1,233 @@
+.preview {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+}
+
+#innerPreview {
+    background-color: var(--white);
+    border: 3px solid var(--border);
+}
+
+.leftForm {
+    text-align: left;
+    float: left;
+    border: 1px solid var(--border);
+    border-collapse: collapse;
+    border-radius: 2px;
+    background-color: #FFFFFF !important;
+    padding: 1%;
+    height: fit-content;
+}
+
+input#rotationsitesPracticeplace {
+    width: 100% !important;
+}
+
+input#practiceplaceName {
+    width: 100% !important;
+}
+
+input#streetPracticeplace {
+    width: 60% !important;
+}
+
+input#streetNumberPracticeplace {
+    width: 30% !important;
+}
+
+input#practiceplacePlace {
+    width: 100% !important;
+}
+
+input#zipPracticeplace {
+    width: 100% !important;
+}
+
+input#streetPracticeplace{
+    width: 100% !important;
+}
+
+input#streetNumberPracticeplace{
+    width: 100% !important;
+}
+
+input[type=file] {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.streetnumber {
+    padding: 0 !important;
+}
+
+.street {
+    padding: 0 !important;
+    padding-right: 3% !important;
+}
+
+.plz {
+    padding: 0 !important;
+    padding-right: 3% !important;
+}
+
+.location {
+    margin-left: 0%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.rightForm {
+    text-align: left;
+    float: left;
+    border: 1px solid var(--border);
+    border-collapse: collapse;
+    border-radius: 2px;
+    flex: 0 0 auto;
+    padding: 1%;
+    margin-bottom: 0;
+    background-color: var(--white);
+    font-size: 80%;
+
+    width: 63%;
+    position: fixed;
+}
+
+input[type=file] {
+}
+
+
+.addPractice {
+    width: 100% !important;
+
+}
+
+#resetbutton {
+    padding-left: 30px;
+}
+
+#submitbutton {
+    padding-right: 30px;
+    padding-left: 300px;
+}
+
+.resetbutton {
+    padding-left: 0px !important;
+}
+
+.submitbutton {
+    text-align: right !important;
+    padding-right: 0px !important;
+
+}
+
+#resetbuttonregister {
+    background-color: #444444;
+    border: none;
+}
+
+#resetbuttonregister:hover {
+    background-color: #2C2C2C;
+}
+
+#submitbuttonpracticeplace {
+    background-color: #6a7d39;
+    border: none;
+}
+
+#submitbuttonpracticeplace {
+    background-color: #4d5f24;
+}
+
+.preview {
+    border: 1px solid var(--border);
+    border-collapse: collapse;
+    border-radius: 2px;
+    background-color: #FFFFFF !important;
+    margin-top: 3% !important;
+}
+
+.divpreview {
+    width: 100%;
+    padding: 1%;
+    margin-bottom: 0.5%;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    font-size: 80%;
+}
+
+.divleftPV {
+    margin-left: 3%;
+    margin-top: 3% !important;
+    margin-right: 0;
+    margin-bottom: 5%;
+    border-right: 2px solid var(--border);
+    border-color: #CCCCCC;
+    border-radius: 0px;
+
+}
+
+.divrightPV {
+    margin-left: -0.2%;
+    margin-top: 3% !important;
+    margin-right: 0;
+    margin-bottom: 5%;
+    border: none;
+    border-left: 2px solid var(--border);
+    border-color: #CCCCCC;
+    border-radius: 0px;
+
+}
+
+input #fileToUpload {
+    padding-top: 14%;
+}
+
+textarea {
+    resize: none !important;
+    overflow: hidden;
+}
+
+.tag {
+    background-color: var(--chestnut) !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+#yearsLabel {
+    padding-left: 3%;
+}
+
+.yearsPracticeplaceLeft {
+    margin-left: 5%;
+}
+
+.yearsPracticeplaceRight {
+    margin-left: 25%;
+}
+
+.col-7.form-floating.mb-3.location {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 1% !important;
+
+}
+
+.col-3.form-floating.mb-3.plz {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+
+}
+
+#removeBtn{
+    background-color: var(--chestnut) !important;
+    border-color: var(--chestnut) !important;
+}
+
+.centerButton{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    white-space: nowrap !important;
+    text-align: center !important;
+}

@@ -1,0 +1,43 @@
+.notificationtitle{
+    margin-bottom: 0% !important;
+    padding-bottom: 0% !important;
+    color: black !important;
+}
+
+.notificationdisappear{
+    display: none;
+}
+
+.leftboxnotification{
+    float:left !important;
+}
+
+.rightboxnotification{
+    float:right !important;
+}
+.col-1 .rightboxnotification {
+    float: right !important;
+}
+
+.row.pp.notificationfield {
+    display: flex !important;
+}
+
+.col-11 .leftboxnotification {
+    float: left !important;
+}
+
+textarea#description {
+    width: 100%;
+}
+
+.deletenotification {
+    margin: 0 !important;
+}
+
+.deletebutton{
+    float: right !important;
+}
+
+
+

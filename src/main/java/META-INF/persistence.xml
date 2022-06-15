@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="POf">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>dataclassesHib.Educator</class>
+        <class>dataclassesHib.Apprentice</class>
+        <class>dataclassesHib.Practiceplace</class>
+        <class>dataclassesHib.User</class>
+        <class>dataclassesHib.Technology</class>
+        <class>dataclassesHib.Application</class>
+        <class>dataclassesHib.Requirement</class>
+        <class>dataclassesHib.Admin</class>
+        <class>dataclassesHib.Notification</class>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+             		<property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://hpilgo\inka:1433;databaseName=ppe;integratedSecurity=true"/>
+      				<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
+           			<property name="hibernate.show_sql" value="true"/>
+           			<property name="hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>

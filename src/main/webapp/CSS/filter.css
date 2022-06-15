@@ -1,0 +1,25 @@
+.rightbox .notFound {
+    margin: auto;
+    text-align: center;
+}
+.rightbox .col-3 #ppagevector{
+    height: 10vw;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-check{
+    padding-right: 1.5em;
+}
+
+.yearsPracticeplaceRight {
+    float: right;
+}
+
+.yearsTitle{
+padding-left: .375rem !important;
+}

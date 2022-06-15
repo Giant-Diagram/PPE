@@ -1,0 +1,19 @@
+.wrapperpwForgot {
+    margin: 3%;
+    background-color: #FFFFFF;
+    height: auto;
+    border: 1px solid #CCCCCC;
+}
+
+.contentpwForgot {
+    margin: 1%;
+}
+
+.maillink {
+    color: black;
+    text-decoration: none;
+}
+
+.smalldescription {
+    font-size: 18px;
+}

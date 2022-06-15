@@ -1,0 +1,400 @@
+@import "ubscolors.css";
+
+:root {
+    --bs-border: #ccc;
+}
+
+div {
+    display: block;
+    position: relative;
+}
+
+#header #split_button .btn #logoutIcon {
+    float: left;
+}
+#feedback{
+    margin-right: 4%;
+    margin-left: 4%;
+}
+
+#header #split_button .btn #logoutText {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    color: var(--black2);
+}
+
+#header #logoTitle img {
+    float: left;
+    height: 50%;
+    left: 17px;
+    top: 27px;
+}
+
+#header #logoTitle .Hleft {
+    float: left;
+}
+
+#header #logoTitle p {
+    position: relative;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    top: 10px;
+    left: 30px;
+    color: var(--black2);
+}
+
+#header {
+    border-bottom: 1px solid #CCCCCC;
+    font-size: 12px;
+    background-color: var(--white);
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header #headerTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#headerTitle {
+    font-family: var(--bs-font-sans-serif);
+    font-size: 24px;
+}
+
+#logoTitle {
+    margin-left: 10px;
+}
+
+#footer {
+    border-top: 1px solid #CCCCCC;
+    font-size: 12px;
+    background-color: var(--white);
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    margin-top: auto;
+    position: inherit;
+}
+
+body {
+    margin-top: 100px;
+    background-color: var(--background) !important;
+    font-family: var(--bs-font-sans-serif);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#split_button button {
+    margin: 0;
+}
+
+#split_button {
+    margin-right: 10px;
+}
+
+.btn {
+    display: inline-flex !important;
+    border: none;
+    position: relative;
+    font-size: 0.875rem;
+    line-height: 20px;
+    padding: 9px 16px;
+    border-radius: 2px;
+    font-weight: 500;
+    height: auto;
+    max-height: 38px;
+    max-width: 98%;
+}
+
+#split_button .btn {
+    background-color: var(--mercury);
+}
+
+#filter, #sortBox{
+    display: inline-block;
+}
+
+#pagecontent {
+    display: inline-block;
+}
+
+#wrapper {
+    margin: 40px 60px;
+}
+
+.titles {
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 2.5%;
+    margin-left: -7px;
+}
+
+.notFoundtitles{
+    border: none !important;
+}
+
+.leftbox .titles {
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 2.5%;
+    margin-top: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.leftbox {
+    margin-bottom: 2%;
+    margin-top: 0 !important;
+    padding: 0 !important;
+}
+
+.rightbox {
+
+}
+
+.rightbox .pp {
+    width: 100%;
+    padding: 1%;
+    margin-bottom: 0.5%;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+
+    font-size: 0.8vw;
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.notificationfield{
+    display: flex !important;
+}
+
+.leftbox #filter, .leftbox #sortBox {
+    width: 100%;
+    padding: 1%;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+}
+
+.pp .row .col-4 img {
+    max-width: 100%;
+    max-height: 10vw;
+    margin-right: 2%;
+    float: left;
+    display: block;
+    height: auto;
+}
+
+.pp .row .col-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+.rightbox .pp .row .col-8 .PPInfo {
+    max-width: 100%;
+    max-height: 100%;
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
+.rightbox .pp .row .col-8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+.rightbox .pp .row .col-8 .ppInfo .h4 {
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    text-align: left !important;
+    float: left !important;
+    padding-left: 0;
+    font-size: 2vw;
+}
+
+.rightbox .pp .row .col-8 .ppInfo .PPDescription {
+    color: var(--lightgrey);
+    font-size: 115%;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+}
+
+.innerFilter {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 2%;
+    width: 117% !important;
+}
+
+.innerFilterSelect {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 2%;
+}
+
+#filter, #sortBox {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.ownLabel {
+    padding-left: .375rem;
+    padding-top: 2%;
+    /*margin-top: 5%;*/
+}
+
+.stern {
+    background: var(--white);
+    float: right;
+    border: none;
+}
+
+dl {
+    text-align: left;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.bottom-0 {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+dl .bullet {
+    margin-left: 10%;
+    display: list-item;
+    list-style-type: disc;
+}
+
+
+.link {
+    color: var(--link);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: var(--lightgrey);
+}
+
+.link:focus {
+    color: var(--lagoon);
+}
+
+.moreInformationButton {
+    color: #FFFFFF;
+    border: none;
+    font-size: 0.8vw;
+    line-height: 20px;
+    border-radius: 2px;
+    background-color: var(--olive);
+    font-weight: 500;
+    max-height: 32px;
+    height: 2vw;
+    font-family: var(--bs-font-sans-serif);
+    position: absolute;
+    right: 6%;
+    bottom: 0;
+}
+
+/* Wird im Moment nicht gebraucht */
+/*.buttons_homepage {
+    display: inline;
+    display: flex;
+}*/
+
+.iconButton {
+    float: right;
+
+    /*display: flex;*/
+
+    display: inline-block;
+
+    padding-right: inherit;
+
+    max-height: 38px;
+    height: auto;
+
+    background-color: var(--white) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.iconButton .h5{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.iconButtonPP {
+    float: right;
+    display: flex;
+    padding-right: inherit;
+    background-color: var(--white) !important;
+    border: none !important;
+}
+
+.buttons_homepage button {
+    margin-left: 2%;
+}
+
+.buttons_homepage button .h5, .buttons_homepage button .material-icons {
+    font-size: 1vw !important;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.buttons_homepage button .material-icons {
+    font-size: 1.2vw !important;
+}
+
+.requiredfields {
+    color: #9a3d37;
+}
+
+.requiredfieldslabel {
+    margin-left: 30px;
+}
+
+.wrapArround, .wrapArround input, .wrapArround select {
+    font-size: 1vw;
+}
+
+.yearfilter{
+    padding-left: 0 !important;
+    margin-left: 3% !important;
+}
+
+.iconsmainbuttons{
+    display: block;
+    height: auto;
+    width: auto;
+    font-size: revert;
+}
+
+#legendDiv{
+    margin-left: 5px;
+    margin-right: -5px;
+
+    width: 100%;
+    padding: 1%;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+}
+
+.legendText{
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 2%;
+
+    font-size: 0.75vw;
+}
