@@ -8,7 +8,6 @@
     } else if (((User) sessionOn.getAttribute("user")).getRole().equalsIgnoreCase("apprentice")) {
         request.getRequestDispatcher("Home").forward(request, response);
     } else {
-        //Robin
 %>
 <html>
 <head>
