@@ -160,7 +160,9 @@
                 </c:choose>
             </c:otherwise>
         </c:choose>
-
+        <div class="divapplybutton">
+            <jsp:include page="INCLUDE/applyButtonBack.html"/>
+        </div>
     </div>
 </div>
 <div id="favoriteConfirmNotification" style="display: none;">
