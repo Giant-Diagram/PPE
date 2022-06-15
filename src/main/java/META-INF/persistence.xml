@@ -15,7 +15,6 @@
         <class>dataclassesHib.Requirement</class>
         <class>dataclassesHib.Admin</class>
         <class>dataclassesHib.Notification</class>
-
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=ppe;encrypt=false"/>
