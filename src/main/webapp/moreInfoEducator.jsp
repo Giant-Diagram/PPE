@@ -53,7 +53,7 @@
                         <input type="hidden" value="false">
                         </span>
                         <form action="EditPPServlet" method="post" accept-charset="UTF-8">
-                            <input type="hidden" value="${sessionScope.ppMoreInfo.id}" name="id" id="id">
+
                             <span>
                                 <button class="iconButtonPP" value="editbutton" name="button">
                                     <img src="IMG/edit.svg" alt="edit icon">
@@ -127,7 +127,8 @@
         </div>
     </div>
     <div class="divapplybutton">
-        <jsp:include page="INCLUDE/applyButtonBack.html"/>
+        <button type="submit" class="applyButton" onclick="history.back()">Zurück </button>
+
     </div>
     <div class="row">
         <c:if test="${sessionScope.ppMoreInfo.kindOfDeployment != null}">
