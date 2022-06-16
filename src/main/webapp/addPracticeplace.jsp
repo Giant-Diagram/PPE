@@ -83,13 +83,13 @@
 
                 <!-- TEXTAREA FOR THE DESCRIPTION OF THE PRACTICEPLACE -->
                 <div class="col form-floating mb-3">
-                    <textarea maxlength="1000" name="description" id="description"
+                    <textarea maxlength="2000" name="description" id="description"
                               class="form-control addPractice"
                               oninput="fetchPreview(this); this.style.height = ''; this.style.height = this.scrollHeight + 'px';" required></textarea>
                     <label for="description" class="label">Beschreibung
                         <span class="requiredfields">*</span>
                     </label>
-                    <p id="counter">Zeichen übrig: <span id="chars" style="float: right">1000</span>
+                    <p id="counter">Zeichen übrig: <span id="chars" style="float: right">2000</span>
                 </div>
 
                 <!-- SELECT FOR THE SUBJECT OF THE PRACTICEPLACE -->

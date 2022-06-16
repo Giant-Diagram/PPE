@@ -86,7 +86,7 @@
 
             <!-- TEXTAREA FOR THE DESCRIPTION OF THE PRACTICEPLACE -->
             <div class="col form-floating mb-3">
-                    <textarea maxlength="1000" name="description" id="description"
+                    <textarea maxlength="2000" name="description" id="description"
                               class="form-control addPractice"
 
                               oninput="fetchPreview(this); resizeArea(this);">${fn:replace(sessionScope.editPP.description,'<br>','&#13;&#10;')}</textarea>
@@ -97,7 +97,7 @@
                     <span class="requiredfields">*</span>
                 </label>
                 <p id="counter">Zeichen übrig: <span id="chars" style="float: right">
-                    ${1000 - sessionScope.editPP.description.length()}
+                    ${2000 - sessionScope.editPP.description.length()}
                 </span>
             </div>
 
