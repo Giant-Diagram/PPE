@@ -125,6 +125,9 @@
             </div>
         </div>
     </div>
+    <div class="divapplybutton">
+        <jsp:include page="INCLUDE/applyButtonBack.html"/>
+    </div>
     <div class="row">
         <c:if test="${sessionScope.ppMoreInfo.kindOfDeployment != null}">
             <div style="margin-left: 3%; margin-bottom: 3%;">
