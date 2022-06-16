@@ -87,6 +87,9 @@ public class FilterPP extends HttpServlet {
 
             String filterSubject = xss.hsc(jsonFilter.getString("filterSubject"));
 
+            // sean war hier
+            request.getSession().setAttribute("searched", filterSubject);
+
             LocalDate filterStartDateLocalDate = null;
             if (!isParameterNotSet(jsonFilter.getString("filterStartDate"))) {
                 String[] filterStartDate = jsonFilter.getString("filterStartDate").split("\\.");

@@ -6,6 +6,7 @@ import dataclassesHib.Practiceplace;
 import dataclassesHib.User;
 import database.DAO;
 import database.DAOGeneric;
+import org.bouncycastle.util.encoders.UTF8;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -26,6 +27,7 @@ import java.util.List;
 public class MoreInformationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         out.print("Only Post method supported");
     }
@@ -33,8 +35,8 @@ public class MoreInformationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-
         User user;
+        request.setCharacterEncoding("UTF-8");
 
         if (session.getAttribute("user") == null)
             user = null;

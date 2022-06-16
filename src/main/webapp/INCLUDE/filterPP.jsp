@@ -1,3 +1,4 @@
+<%@ page import="java.io.PrintWriter" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="col-2 leftbox">
 	<div id="filter">
@@ -17,6 +18,27 @@
 					<option>Plattformentwicklung</option>
 				</select>
 			</div>
+
+			<!-- Sean war hier -->
+			<%
+
+				try {
+					PrintWriter pw = response.getWriter();
+					if (request.getSession().getAttribute("searched") != null) {
+					%>
+					<script>
+						document.getElementById("subject").value = "<%= request.getSession().getAttribute("searched")%>"
+						filterPP();
+						updateFilter(document.getElementById("subject"));
+					</script>
+					<%
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+			%>
+
 
 			<!-- filterPP for projectplace 2. position-->
 			<div class="col innerFilterSelect">

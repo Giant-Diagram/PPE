@@ -3,7 +3,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     HttpSession sessionOn = request.getSession();
-
     if (sessionOn.getAttribute("user") == null) {
         request.getRequestDispatcher("index.jsp").forward(request, response);
     } else if (!((User) sessionOn.getAttribute("user")).getRole().equalsIgnoreCase("apprentice")) {
@@ -12,6 +11,7 @@
 %>
 <html>
 <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link href="CSS/header.css"
           type="text/css"
           rel="stylesheet">
