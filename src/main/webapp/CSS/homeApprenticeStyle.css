@@ -218,7 +218,10 @@ body {
     text-align: left !important;
     float: left !important;
     padding-left: 0;
-    font-size: 2vw;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-top: 20px;
 }
 
 .rightbox .pp .row .col-8 .ppInfo .PPDescription {

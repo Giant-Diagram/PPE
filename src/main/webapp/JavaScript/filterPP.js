@@ -88,12 +88,12 @@ function setPP(ppListJson) {
                 '<div class="col-8">' +
                 '<div class="ppInfo">' +
                 '<div class="row">' +
-                '<div class="col-6">' +
+                '<div class="col-10">' +
                 '<div class="PPInfo">' +
                 '<p class="h4">' + pp.name + '</p>' +
                 '</div>' +
                 '</div>' +
-                '<div class="col-6">';
+                '<div class="col-2">';
 
             if (pp.ownerOfPP === true || pp.roleUser === 'ADMIN' || pp.roleUser === 'OWNER') {
                 innerHtmlRightbox = innerHtmlRightbox +
