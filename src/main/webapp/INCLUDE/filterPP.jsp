@@ -39,15 +39,15 @@
 
 			%>
 
-
 			<!-- filterPP for projectplace 2. position-->
 			<div class="col innerFilterSelect">
-				<label for="projectplaceSelect" class="form-label ownLabel">Projektplatz</label>
-				<select class="form-select filter" id="projectplaceSelect"
-					name="filterStartsWithSelect" onchange="filterPP();">
+				<label hidden for="projectplaceSelect" class="form-label ownLabel">Projektplatz</label>
+				<select hidden class="form-select filter" id="projectplaceSelect"
+						name="filterStartsWithSelect" onchange="filterPP();">
 					<option selected>Alle</option>
 				</select>
 			</div>
+
 
 			<!-- filterPP for name of the projectplace 3. position-->
 			<div class="col innerFilter">
