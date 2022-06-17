@@ -55,12 +55,16 @@ public class ExportPPServlet extends HttpServlet {
                 headerRow.add("4.Technologie");
                 headerRow.add("5.Technologie");
                 headerRow.add("6.Technologie");
+                headerRow.add("7.Technologie");
+                headerRow.add("8.Technologie");
                 headerRow.add("1.Anforderung");
                 headerRow.add("2.Anforderung");
                 headerRow.add("3.Anforderung");
                 headerRow.add("4.Anforderung");
                 headerRow.add("5.Anforderung");
                 headerRow.add("6.Anforderung");
+                headerRow.add("7.Anforderung");
+                headerRow.add("8.Anforderung");
                 headerRow.add("Lehrjahre");
                 headerRow.add("Adresse");
                 headerRow.add("Ort");
@@ -79,14 +83,14 @@ public class ExportPPServlet extends HttpServlet {
 
                     row.add(p.getDescription().replaceAll("<br>"," "));
 
-                    for (int i = 0; i < 6; i++) {
-                        try {
+                    for (int i = 0; i < 8; i++) {
+                     try {
                             row.add(p.getTechnologies().get(i).getTechnology());
                         } catch (NullPointerException | IndexOutOfBoundsException e) {
                             row.add("-");
                         }
                     }
-                    for (int i = 0; i < 6; i++) {
+                    for (int i = 0; i < 8; i++) {
                         try {
                             row.add(p.getRequirements().get(i).getRequirement());
                         } catch (NullPointerException | IndexOutOfBoundsException e) {
