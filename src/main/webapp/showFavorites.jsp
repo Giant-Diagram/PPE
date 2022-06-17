@@ -97,7 +97,7 @@
                                                 </c:if>
                                             </c:forEach>
                                             <dd>
-                                                <a class="link"
+                                                <a hidden class="link" class="mehrButton"
                                                    onclick="moreInfoForm(${pps.id})">
                                                     ...mehr</a>
                                             </dd>
@@ -113,9 +113,10 @@
                                                 </c:if>
                                             </c:forEach>
                                             <dd>
-                                                <a class="link"
+                                                <a hidden class="link"
                                                    onclick="moreInfoForm(${pps.id})">
-                                                    ...mehr</a>
+                                                    ...mehr
+                                                </a>
                                             </dd>
                                         </dl>
                                     </div>
