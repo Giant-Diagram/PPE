@@ -173,7 +173,7 @@ class Tags {
             var tagsLength = this.getSelectedValues().length;
 
 
-            if (tagsLength <= 7) {
+            if (tagsLength <= 9) {
                 if(e !== '' && e !== ' ') {
                     t || (t = e);
 					var img = document.createElement('img');
