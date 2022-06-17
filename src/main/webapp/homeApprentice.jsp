@@ -61,12 +61,16 @@
 <div id="wrapper">
     <div class="col titles">
         <div class="row">
-            <div class="col-2">
+            <div class="col-3">
                 <div>
                     <h3>Projektplätze</h3>
                 </div>
             </div>
-            <div class="col-10">
+            <div class="col-4"id="searchWrapper">
+                <input type="text" name="searchBar" id="searchBar" placeholder="Projekt,Titel"/>
+                <button class="applyButton"  type="submit">Suche</button>
+            </div>
+            <div class="col-5">
                 <div class="buttons_homepage">
                     <button class="iconButton btn" onclick="document.getElementById('exportExcel').submit();">
                         <img src="IMG/file_download.svg" alt="file download icon" class="iconsmainbuttons">

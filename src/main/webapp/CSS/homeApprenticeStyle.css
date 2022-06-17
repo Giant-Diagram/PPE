@@ -401,3 +401,7 @@ dl .bullet {
 
     font-size: 0.75vw;
 }
+#searchBar{
+    float:left;
+    width:75%;
+}
