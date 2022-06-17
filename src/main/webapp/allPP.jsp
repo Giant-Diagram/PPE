@@ -69,7 +69,7 @@
 
     <div class="row">
         <!-- left part (filterPP) -->
-        <jsp:include page="INCLUDE/filterAllPPAdminMyPP.jsp"/>
+        <jsp:include page="filterAllPPAdminMyPP.jsp"/>
         <!-- right part (pagecontent) -->
         <div class="col-10 rightbox" id="rightbox">
         </div>

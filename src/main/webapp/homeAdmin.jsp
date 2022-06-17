@@ -98,7 +98,7 @@
     </div>
     <div class="row">
         <!-- left part (filterPP) -->
-        <jsp:include page="INCLUDE/filterPP.jsp" />
+        <jsp:include page="filterPP.jsp" />
         <!-- right part (pagecontent) -->
         <div class="col-10 rightbox" id="rightbox">
         </div>
