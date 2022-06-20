@@ -161,7 +161,7 @@
             </c:otherwise>
         </c:choose>
         <div class="divapplybutton">
-            <jsp:include page="INCLUDE/applyButtonBack.html"/>
+            <button type="submit" class="applyButton" onclick="history.back()">Zurück </button>
         </div>
     </div>
 </div>
