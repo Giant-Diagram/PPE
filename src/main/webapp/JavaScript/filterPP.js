@@ -184,7 +184,7 @@ function setPP(ppListJson) {
                 '<dd>' +
                 '<a class="link"' +
                 'onclick="moreInfoForm(\'' + pp.id + 'Form\')"' +
-                '>...mehr</a>' +
+                '>...</a>' +
                 '</dd>' +
                 '</dl>' +
                 '</div>' +
@@ -210,7 +210,7 @@ function setPP(ppListJson) {
                 '<dd>' +
                 '<a class="link"' +
                 'onclick="moreInfoForm(\'' + pp.id + 'Form\')"' +
-                '>...mehr</a>' +
+                '>...</a>' +
                 '</dd>' +
                 '</dl>' +
                 '</div>' +
