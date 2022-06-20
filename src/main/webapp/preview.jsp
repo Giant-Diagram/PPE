@@ -168,9 +168,9 @@
                                                         <c:set scope="page" var="trimmedLanguage"
                                                                value="${pageScope.trimmedLanguagetemp}"/>
                                                     </c:forEach>
-                                                    <li class="bullet">${pageScope.trimmedRequirement}...</li>
-                                                    <c:remove var="trimmedRequirement"/>
-                                                    <c:remove var="trimmedRequirementTemp"/>
+                                                    <li class="bullet">${pageScope.trimmedLanguage}...</li>
+                                                    <c:remove var="trimmedLanguage"/>
+                                                    <c:remove var="trimmedLanguageTemp"/>
                                                 </c:when>
                                                 <c:otherwise>
                                                     <li class="bullet">${language.language}</li>
@@ -179,23 +179,23 @@
                                         </c:forEach>
                                     </c:when>
                                     <c:otherwise>
-                                        <c:forEach items="${sessionScope.requirements}" var="requirement">
+                                        <c:forEach items="${sessionScope.language}" var="language">
                                             <c:choose>
-                                                <c:when test="${(fn:length(requirement)) > 8}">
-                                                    <c:set scope="page" var="trimmedRequirement" value=""/>
+                                                <c:when test="${(fn:length(language)) > 8}">
+                                                    <c:set scope="page" var="trimmedLanguage" value=""/>
                                                     <c:forEach var="i" begin="0" end="6" step="1">
-                                                        <c:set scope="page" var="trimmedRequirementTemp"
-                                                               value="${pageScope.trimmedRequirement}${requirement.toCharArray()[i]}"/>
-                                                        <c:remove var="trimmedRequirement"/>
-                                                        <c:set scope="page" var="trimmedRequirement"
-                                                               value="${pageScope.trimmedRequirementTemp}"/>
+                                                        <c:set scope="page" var="trimmedLanguageTemp"
+                                                               value="${pageScope.trimmmedLanguage}${language.toCharArray()[i]}"/>
+                                                        <c:remove var="trimmedLanguage"/>
+                                                        <c:set scope="page" var="trimmedLanguage"
+                                                               value="${pageScope.trimmedLanguageTemp}"/>
                                                     </c:forEach>
-                                                    <li class="bullet">${pageScope.trimmedRequirement}...</li>
-                                                    <c:remove var="trimmedRequirement"/>
-                                                    <c:remove var="trimmedRequirementTemp"/>
+                                                    <li class="bullet">${pageScope.trimmedLanguage}...</li>
+                                                    <c:remove var="trimmedLanguage"/>
+                                                    <c:remove var="trimmedLanguageTemp"/>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <li class="bullet">${requirement}</li>
+                                                    <li class="bullet">${language}</li>
                                                 </c:otherwise>
                                             </c:choose>
                                         </c:forEach>

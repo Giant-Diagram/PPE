@@ -82,7 +82,7 @@ public class ExportPPServlet extends HttpServlet {
                     row.add(p.getEnd().getMonthValue() + "." + p.getEnd().getYear());
                     row.add(p.getDescription().replaceAll("<br>"," "));
 
-
+//hallo gianh
                     for (int i = 0; i < 8; i++) {
                      try {
                             row.add(p.getTechnologies().get(i).getTechnology());

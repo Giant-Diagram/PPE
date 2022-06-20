@@ -238,5 +238,4 @@ class Tags {
         }
     }
 }
-
 export default Tags;
