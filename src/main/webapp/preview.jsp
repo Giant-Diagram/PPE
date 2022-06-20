@@ -150,6 +150,62 @@
 
                         </ul>
                         <br>
+
+                        <br>
+                        <b>Sprachen:</b>
+                        <ul>
+                            <c:if test="${sessionScope.languages != null && sessionScope.languages != ''}">
+                                <c:choose>
+                                    <c:when test="${fn:contains(sessionScope.languages, '@')}">
+                                        <c:forEach items="${sessionScope.languages}" var="language">
+                                            <c:choose>
+                                                <c:when test="${(fn:length(language.language)) > 8}">
+                                                    <c:set scope="page" var="trimmedLanguage" value=""/>
+                                                    <c:forEach var="i" begin="0" end="6" step="1">
+                                                        <c:set scope="page" var="trimmedLanguagetemp"
+                                                               value="${pageScope.trimmedLanguage}${language.language.toCharArray()[i]}"/>
+                                                        <c:remove var="trimmedLanguage"/>
+                                                        <c:set scope="page" var="trimmedLanguage"
+                                                               value="${pageScope.trimmedLanguagetemp}"/>
+                                                    </c:forEach>
+                                                    <li class="bullet">${pageScope.trimmedRequirement}...</li>
+                                                    <c:remove var="trimmedRequirement"/>
+                                                    <c:remove var="trimmedRequirementTemp"/>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <li class="bullet">${language.language}</li>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <c:forEach items="${sessionScope.requirements}" var="requirement">
+                                            <c:choose>
+                                                <c:when test="${(fn:length(requirement)) > 8}">
+                                                    <c:set scope="page" var="trimmedRequirement" value=""/>
+                                                    <c:forEach var="i" begin="0" end="6" step="1">
+                                                        <c:set scope="page" var="trimmedRequirementTemp"
+                                                               value="${pageScope.trimmedRequirement}${requirement.toCharArray()[i]}"/>
+                                                        <c:remove var="trimmedRequirement"/>
+                                                        <c:set scope="page" var="trimmedRequirement"
+                                                               value="${pageScope.trimmedRequirementTemp}"/>
+                                                    </c:forEach>
+                                                    <li class="bullet">${pageScope.trimmedRequirement}...</li>
+                                                    <c:remove var="trimmedRequirement"/>
+                                                    <c:remove var="trimmedRequirementTemp"/>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <li class="bullet">${requirement}</li>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:if>
+
+                        </ul>
+                        <br>
+
                         <b>Rotationsplätze: </b>${sessionScope.rotationsites}
                     </div>
                     <div class="col-6">
