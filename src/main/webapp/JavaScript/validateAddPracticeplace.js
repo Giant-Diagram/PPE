@@ -72,7 +72,7 @@ function validatePracticeplace() {
         feedbackElement.setAttribute('role', 'alert');
 
         feedbackElement.innerHTML = 'Technologien müssen eingegeben werden!';
-
+        console.log(123123)
         scrollAndfadeOutFeedback(3500);
 
         return false;

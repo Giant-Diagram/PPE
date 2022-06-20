@@ -125,7 +125,7 @@
                 <!-- SELECT FOR THE TECHNOLOGIES OF THE PRACTICEPLACE -->
                 <div class="col form-floating mb-3">
                     <select class="form-select form-control addPractice" id="technologies" multiple
-                            data-allow-new="true" oninput="fetchTechnologiesPracticeplace(this.value);" required>
+                        data-allow-new="true" oninput="fetchTechnologiesPracticeplace(this.value);" required>
                         <option selected disabled hidden value="">Technologien...</option>
                     </select>
                     <label for="technologies" class="label">Technologien
@@ -140,6 +140,16 @@
                         <option selected disabled hidden value="">Anforderungen...</option>
                     </select>
                     <label for="subjects" class="label">Anforderungen
+                        <span class="requiredfields">*</span>
+                    </label>
+                </div>
+                <!-- SELECT FOR THE LANGUAGES OF THE PRACTICEPLACE -->
+                <div class="col form-floating mb-3">
+                    <select class="form-select form-control addPractice" id="languages" multiple
+                            data-allow-new="true" oninput="fetchTechnologiesPracticeplace(this.value);" required>
+                        <option selected disabled hidden value="">Sprachen...</option>
+                    </select>
+                    <label for="languages" class="label">Sprachen
                         <span class="requiredfields">*</span>
                     </label>
                 </div>
@@ -377,6 +387,11 @@
 
     function fetchTechnologiesPracticeplace(value) {
         fetch(locationServlet + '?technologies=' + value)
+            .then(document.getElementById('preview').contentWindow.location.reload());
+    }
+
+    function fetchLanguagesPracticeplace(value) {
+        fetch(locationServlet + '?languages=' + value)
             .then(document.getElementById('preview').contentWindow.location.reload());
     }
 
