@@ -401,6 +401,9 @@ dl .bullet {
 
     font-size: 0.75vw;
 }
+.mehrButton{
+    color: black;
+}
 #searchBar{
     float:left;
     width:75%;
