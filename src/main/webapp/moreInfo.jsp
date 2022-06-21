@@ -178,7 +178,7 @@
     function favorite(element, id) {
         const locationServlet = 'FavoriteServlet';
         const star = element;
-        const starClicked = star.parentElement.parentElement.children[1];     
+        const starClicked = star.parentElement.parentElement.children[1];
         if (starClicked.value === 'false') {
             star.src = 'IMG/star.svg';
             starClicked.value = 'true';

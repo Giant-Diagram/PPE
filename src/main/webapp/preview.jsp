@@ -154,55 +154,14 @@
                         <br>
                         <b>Sprachen:</b>
                         <ul>
-                            <c:if test="${sessionScope.languages != null && sessionScope.languages != ''}">
-                                <c:choose>
-                                    <c:when test="${fn:contains(sessionScope.languages, '@')}">
-                                        <c:forEach items="${sessionScope.languages}" var="language">
-                                            <c:choose>
-                                                <c:when test="${(fn:length(language.language)) > 8}">
-                                                    <c:set scope="page" var="trimmedLanguage" value=""/>
-                                                    <c:forEach var="i" begin="0" end="6" step="1">
-                                                        <c:set scope="page" var="trimmedLanguagetemp"
-                                                               value="${pageScope.trimmedLanguage}${language.language.toCharArray()[i]}"/>
-                                                        <c:remove var="trimmedLanguage"/>
-                                                        <c:set scope="page" var="trimmedLanguage"
-                                                               value="${pageScope.trimmedLanguagetemp}"/>
-                                                    </c:forEach>
-                                                    <li class="bullet">${pageScope.trimmedLanguage}...</li>
-                                                    <c:remove var="trimmedLanguage"/>
-                                                    <c:remove var="trimmedLanguageTemp"/>
-                                                </c:when>
-                                                <c:otherwise>
-                                                    <li class="bullet">${language.language}</li>
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </c:forEach>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <c:forEach items="${sessionScope.language}" var="language">
-                                            <c:choose>
-                                                <c:when test="${(fn:length(language)) > 8}">
-                                                    <c:set scope="page" var="trimmedLanguage" value=""/>
-                                                    <c:forEach var="i" begin="0" end="6" step="1">
-                                                        <c:set scope="page" var="trimmedLanguageTemp"
-                                                               value="${pageScope.trimmmedLanguage}${language.toCharArray()[i]}"/>
-                                                        <c:remove var="trimmedLanguage"/>
-                                                        <c:set scope="page" var="trimmedLanguage"
-                                                               value="${pageScope.trimmedLanguageTemp}"/>
-                                                    </c:forEach>
-                                                    <li class="bullet">${pageScope.trimmedLanguage}...</li>
-                                                    <c:remove var="trimmedLanguage"/>
-                                                    <c:remove var="trimmedLanguageTemp"/>
-                                                </c:when>
-                                                <c:otherwise>
-                                                    <li class="bullet">${language}</li>
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </c:forEach>
-                                    </c:otherwise>
-                                </c:choose>
+                            <c:if test="${sessionScope.language != null && sessionScope.language != ''}">
+                                <ul>
+                                <c:forEach items="${sessionScope.language}" var="lang">
+                                        <li>${lang}</li><br>
+                                </c:forEach>
+                                </ul>
                             </c:if>
-
+                            <div id="demo"></div>
                         </ul>
                         <br>
 

@@ -144,14 +144,16 @@
                     </label>
                 </div>
                 <!-- SELECT FOR THE LANGUAGES OF THE PRACTICEPLACE -->
-                <div class="col form-floating mb-3">
-                    <select class="form-select form-control addPractice" id="languages" multiple
-                            data-allow-new="true" oninput="fetchTechnologiesPracticeplace(this.value);" required>
-                        <option selected disabled hidden value="">Sprachen...</option>
-                    </select>
-                    <label for="languages" class="label">Sprachen
+                <div class="form-check">
+                    <label class="label" id="language">Sprachen:
                         <span class="requiredfields">*</span>
                     </label>
+                    <br>
+                    <input type="checkbox" value="Deutsch" name="language" id="Deutsch" class="yearsPracticeplaceLeft">
+                    <label for="Deutsch" class="label">Deutsch</label>
+                    <input type="checkbox" name="language" value="English" id="English" class="yearsPracticeplaceRight">
+                    <label for="English" class="label">English</label>
+                    <br>
                 </div>
 
                 <!-- INPUT FOR ROTATIONSITES OF THE PRACTICEPLACE -->
@@ -331,6 +333,7 @@
     </c:if>
 
     var years = [];
+    var language= [];
 
     const locationServlet = 'Preview';
 
@@ -389,13 +392,35 @@
         fetch(locationServlet + '?technologies=' + value)
             .then(document.getElementById('preview').contentWindow.location.reload());
     }
+    document.querySelector("input[id=Deutsch]").addEventListener('change', function () {
+        console.log(this.value)
+        if (this.checked) {
+            language.push(this.value);
+        } else {
+            language.splice(years.indexOf(this.value), 1);
+        }
 
-    function fetchLanguagesPracticeplace(value) {
-        fetch(locationServlet + '?languages=' + value)
+        language.sort((a, b) => a - b);
+        fetch(locationServlet + '?language=' + language)
             .then(document.getElementById('preview').contentWindow.location.reload());
-    }
+    });
+
+    document.querySelector("#English").addEventListener('change', function () {
+        console.log(this.value)
+        if (this.checked) {
+            language.push(this.value);
+        } else {
+            language.splice(language.indexOf(this.value), 1);
+        }
+
+        language.sort((a, b) => a - b);
+        fetch(locationServlet + '?language=' + language)
+            .then(document.getElementById('preview').contentWindow.location.reload());
+    });
+
 
     document.querySelector("input[id=years1]").addEventListener('change', function () {
+
         if (this.checked) {
             years.push(this.value);
         } else {
