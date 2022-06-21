@@ -96,7 +96,7 @@
                         <b>Rotationsplätze: </b>${sessionScope.ppMoreInfo.rotationsites}
                     </div>
                     <div class="col-5">
-                        <b>Praxisausbilder/in: </b>${sessionScope.ppMoreInfo.educator.firstname} ${sessionScope.ppMoreInfo.educator.lastname}
+                        <b>Praxisausbilder/in: </b>${sessionScope.ppMoreInfo.educator.email}
                         <br><br>
                         <b>Fachrichtung:</b>
                         ${sessionScope.ppMoreInfo.subject}
@@ -137,7 +137,7 @@
                     </div>
                 </c:if>
                 <div class="divapplybutton">
-                    <jsp:include page="INCLUDE/applyButton.html"/>
+                    <jsp:include page="INCLUDE/applyButton.jsp"/>
                 </div>
             </c:when>
             <c:otherwise>
