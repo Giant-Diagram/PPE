@@ -9,10 +9,10 @@
     <title>Document</title>
 </head>
 <body>
-<a href="./newapplication.jsp" target="_blank">
-
-    <button type="submit" class="applyButton">Jetzt bewerben
-    </button>
+<a href="mailto:${sessionScope.ppMoreInfo.educator.email}?subject=your title&body=TThe message">
+    <button type="submit" class="applyButton">Jetzt bewerben</button>
 </a>
+
+
 </body>
 </html>

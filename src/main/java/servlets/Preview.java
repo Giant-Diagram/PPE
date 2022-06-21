@@ -95,6 +95,15 @@ public class Preview extends HttpServlet {
         if (request.getParameter("enddate") != null) {
             session.setAttribute("enddate", xss.hsc(request.getParameter("enddate")));
         }
+        if (request.getParameter("language") != null) {
+            String[] tempYears = xss.hsc(request.getParameter("language")).split(",");
+            try {
+
+                    session.setAttribute("language", xss.hsc(request.getParameter("language")));
+            }catch (NumberFormatException ex){
+                session.setAttribute("language", xss.hsc(request.getParameter("language")));
+            }
+        }
 
         if (request.getParameter("years") != null) {
                 String[] tempYears = xss.hsc(request.getParameter("years")).split(",");
