@@ -175,7 +175,7 @@ body {
 }
 
 .leftbox #filter, .leftbox #sortBox {
-    width: 100%;
+    width: 100% !important;
     padding: 1%;
     background-color: var(--white);
     border: 1px solid var(--border);
@@ -247,7 +247,9 @@ body {
 #filter, #sortBox {
     margin-right: 5px;
     margin-left: 5px;
+    position: static;
 }
+
 
 .ownLabel {
     padding-left: .375rem;
@@ -407,4 +409,9 @@ dl .bullet {
 #searchBar{
     float:left;
     width:75%;
+}
+@media (max-height: 50px) {
+    #filter{
+        position:fixed;
+    }
 }

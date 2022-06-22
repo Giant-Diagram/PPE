@@ -54,21 +54,23 @@ public class FilterPP extends HttpServlet {
             user = (User) session.getAttribute("user");
 
         if (user != null) {
-        	StringBuffer jb = new StringBuffer();
+            StringBuffer jb = new StringBuffer();
             String line = null;
             try {
-              BufferedReader reader = request.getReader();
-              while ((line = reader.readLine()) != null)
-                jb.append(line);
+                BufferedReader reader = request.getReader();
+                while ((line = reader.readLine()) != null)
+                    jb.append(line);
 
 
-            } catch (Exception e) { e.printStackTrace(); }
-            JSONObject jsonFilter =  new JSONObject(jb.toString());
-          
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            JSONObject jsonFilter = new JSONObject(jb.toString());
+
             //Set variables
             JSONArray filteredPracticeplacesJson = new JSONArray();
             ArrayList<JSONObject> practiceplacesJsonObject = new ArrayList<>();
-          //Setting content type and return json
+            //Setting content type and return json
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
             PrintWriter out = response.getWriter();
@@ -134,17 +136,17 @@ public class FilterPP extends HttpServlet {
             }
             String favoriteFilter = jsonFilter.getString("favorite");
             if (((User) session.getAttribute("user")).getRole().equalsIgnoreCase("APPRENTICE")) {
-            	 if(!(isParameterNotSet(favoriteFilter))) {
-                 	ArrayList<Practiceplace> favoritePracticeplaces = new ArrayList<>();
-                 	for (Practiceplace favorite : ((Apprentice) session.getAttribute("user")).getFavorites()) {
-                 		favoritePracticeplaces.add(favorite);
-                     }
-                 	allPracticeplaces = favoritePracticeplaces;
-                 }
+                if (!(isParameterNotSet(favoriteFilter))) {
+                    ArrayList<Practiceplace> favoritePracticeplaces = new ArrayList<>();
+                    for (Practiceplace favorite : ((Apprentice) session.getAttribute("user")).getFavorites()) {
+                        favoritePracticeplaces.add(favorite);
+                    }
+                    allPracticeplaces = favoritePracticeplaces;
+                }
             }
-           
+
             //Check if filterPP data is null
-            if (isParameterNotSet(filterStartsWith) && (isParameterNotSet(filterStartsWithSelect) || filterStartsWithSelect.equalsIgnoreCase("Alle")) && (isParameterNotSet(filterSubject) || filterSubject.equalsIgnoreCase("Alle")) && filterStartDateLocalDate == null && filterEndDateLocalDate == null && filterYears.isEmpty() && isParameterNotSet(filterKindOfDeployment) && Arrays.isNullOrContainsNull(filterPlaceArray)&&isParameterNotSet(favoriteFilter)) {
+            if (isParameterNotSet(filterStartsWith) && (isParameterNotSet(filterStartsWithSelect) || filterStartsWithSelect.equalsIgnoreCase("Alle")) && (isParameterNotSet(filterSubject) || filterSubject.equalsIgnoreCase("Alle")) && filterStartDateLocalDate == null && filterEndDateLocalDate == null && filterYears.isEmpty() && isParameterNotSet(filterKindOfDeployment) && Arrays.isNullOrContainsNull(filterPlaceArray) && isParameterNotSet(favoriteFilter)) {
                 filteredPracticeplaces = allPracticeplaces;
                 if (session.getAttribute("filteredPracticeplaces") != null)
                     session.removeAttribute("filteredPracticeplaces");

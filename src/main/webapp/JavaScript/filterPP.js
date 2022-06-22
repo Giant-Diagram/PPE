@@ -6,6 +6,25 @@ function confirmdeletepp(id) {
     $(idString).fadeIn('slow');
 }
 
+
+window.addEventListener("scroll", function(){
+    let scroll = window.scrollY;
+    // 207 when at top
+    if (scroll > 207) {
+        document.getElementById("filter").style = `
+        position: fixed;
+        top: 54px;
+        width: 15% !important;
+        `
+    } else {
+        document.getElementById("filter").style = `
+        
+        position: static;
+        `
+
+    }
+});
+
 function filterPP() {
     //Reading filterPP-inputs
     const formInputs = document.getElementsByClassName('filter');
@@ -72,6 +91,8 @@ function setPP(ppListJson) {
     } else {
         for (let i = 0; i < ppList.length; i++) {
             const pp = ppList[i];
+            console.log(pp)
+            //hier war andi
 
             if (ppSelectValue.toUpperCase() === 'ALLE') {
                 ppSelect.innerHTML = ppSelect.innerHTML +
@@ -270,12 +291,16 @@ function setPP(ppListJson) {
 }
 
 function updateFilter(element){
-    const value = element.value;
-    const kod = document.getElementById('kodDiv');
+    let value = element.value;
 
-    if (value.toUpperCase() === 'PLATTFORMENTWICKLUNG') {
-        kod.removeAttribute("style");
-    } else {
-        kod.setAttribute("style", "display:none");
+    try {
+        let kod = document.getElementById('kodDiv');
+        if (value.toUpperCase() === 'PLATTFORMENTWICKLUNG') {
+            kod.removeAttribute("style");
+        } else {
+            kod.setAttribute("style", "display:none");
+        }
+    } catch (e) {
+        console.log("No kodDiv found.")
     }
 }
