@@ -4,17 +4,18 @@ const FilterPPServlet = 'FilterPP';
 function confirmdeletepp(id) {
     let idString = '#' + id;
     $(idString).fadeIn('slow');
+
 }
 
 
 window.addEventListener("scroll", function(){
     let scroll = window.scrollY;
     // 207 when at top
-    if (scroll > 207) {
+    if (scroll > 200) {
         document.getElementById("filter").style = `
         position: fixed;
         top: 54px;
-        width: 15% !important;
+        width: 15.5% !important;
         `
     } else {
         document.getElementById("filter").style = `

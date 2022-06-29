@@ -93,6 +93,13 @@
                             </c:forEach>
                         </ul>
                         <br>
+                        <b>Sprachen:</b>
+                        <ul>
+                            <c:forEach items="${sessionScope.ppMoreInfo.languages}" var="language">
+                                <li class="bullet">${language.language}</li>
+                            </c:forEach>
+                        </ul>
+                        <br>
                         <b>Rotationsplätze: </b>${sessionScope.ppMoreInfo.rotationsites}
                     </div>
                     <div class="col-5">
@@ -149,6 +156,7 @@
                 <c:choose>
                 	<c:when test="${requestScope.applicated == true}">
                 		<div class="divapplybutton">
+                                ${sessionScope.ppMoreInfo.rotationsites}
                     		<jsp:include page="INCLUDE/applyButtonApplicated.html"/>
                 		</div>
                 	</c:when>

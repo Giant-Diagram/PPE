@@ -392,6 +392,11 @@
         fetch(locationServlet + '?technologies=' + value)
             .then(document.getElementById('preview').contentWindow.location.reload());
     }
+
+    function fetchLanguagesPracticeplace(value) {
+        fetch(locationServlet + '?languages=' + value)
+            .then(document.getElementById('preview').contentWindow.location.reload());
+    }
     document.querySelector("input[id=Deutsch]").addEventListener('change', function () {
         console.log(this.value)
         if (this.checked) {

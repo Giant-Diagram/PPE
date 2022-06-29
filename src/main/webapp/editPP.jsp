@@ -202,6 +202,27 @@
                 </label>
             </div>
 
+            <!-- SELECT FOR THE Lanuages OF THE PRACTICEPLACE -->
+
+            <div class="form-check">
+                <input type="checkbox" value="Deutsch" name="language" id="Deutsch" class="yearsPracticeplaceLeft"
+                <c:forEach items="${sessionScope.editPP.languages}" var="language">
+                <c:if test="${language.language == 'Deutsch'}">
+                       checked
+                </c:if>
+                </c:forEach>
+                >
+                <label for="Deutsch" class="label">Deutsch</label>
+                <input type="checkbox" name="language" value="English" id="English" class="yearsPracticeplaceRight"
+                <c:forEach items="${sessionScope.editPP.languages}" var="language">
+                <c:if test="${language.language == 'English'}">
+                       checked
+                </c:if>
+                </c:forEach>
+                >
+                <label for="English" class="label">English</label><br>
+            </div>
+
             <!-- INPUT FOR ROTATIONSITES OF THE PRACTICEPLACE -->
             <div class="col form-floating mb-3">
                 <input min="1" autocomplete="off" type="number" name="rotationsites"
@@ -444,6 +465,7 @@
     const locationServlet = 'Preview';
 
     var years = ${sessionScope.editPP.apprenticeYears};
+    var language= ${sessionScope.editPP.languages};
 
     fetch(locationServlet + '?years=' + years);
 
@@ -506,6 +528,36 @@
         fetch(locationServlet + '?technologies=' + value);
         document.getElementById('preview').contentWindow.location.reload();
     }
+
+    function fetchLanguagesPracticeplace(value) {
+        fetch(locationServlet + '?languages=' + value);
+        document.getElementById('preview').contentWindow.location.reload();
+    }
+    document.querySelector("input[id=Deutsch]").addEventListener('change', function () {
+        console.log(this.value)
+        if (this.checked) {
+            language.push(this.value);
+        } else {
+            language.splice(years.indexOf(this.value), 1);
+        }
+
+        language.sort((a, b) => a - b);
+        fetch(locationServlet + '?language=' + language)
+            .then(document.getElementById('preview').contentWindow.location.reload());
+    });
+
+    document.querySelector("#English").addEventListener('change', function () {
+        console.log(this.value)
+        if (this.checked) {
+            language.push(this.value);
+        } else {
+            language.splice(language.indexOf(this.value), 1);
+        }
+
+        language.sort((a, b) => a - b);
+        fetch(locationServlet + '?language=' + language)
+            .then(document.getElementById('preview').contentWindow.location.reload());
+    });
 
     document.querySelector("input[id=years1]").addEventListener('change', function () {
         if (this.checked) {

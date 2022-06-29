@@ -11,10 +11,12 @@
         <class>dataclassesHib.Practiceplace</class>
         <class>dataclassesHib.User</class>
         <class>dataclassesHib.Technology</class>
+        <class>dataclassesHib.Language</class>
         <class>dataclassesHib.Application</class>
         <class>dataclassesHib.Requirement</class>
         <class>dataclassesHib.Admin</class>
         <class>dataclassesHib.Notification</class>
+
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=ppe;encrypt=false"/>

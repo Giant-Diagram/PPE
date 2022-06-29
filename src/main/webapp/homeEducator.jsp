@@ -119,7 +119,6 @@
 </div>
 <c:if test="${sessionScope.notifications != '[]' || sessionScope.notifications.size() != 0}">
     <div id="Notification" style="display: none;">
-
         <script>
             setTimeout(function () {
             $('#Notification').fadeIn('slow');

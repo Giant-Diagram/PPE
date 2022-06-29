@@ -10,7 +10,7 @@
 </head>
 <body>
 <a href="mailto:${sessionScope.ppMoreInfo.educator.email}?subject=your title&body=TThe message">
-    <button type="submit" class="applyButton">Jetzt bewerben</button>
+    <button type="submit" class="applyButton">0/1</button>
 </a>
 
 

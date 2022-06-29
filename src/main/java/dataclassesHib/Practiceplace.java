@@ -70,6 +70,10 @@ public class Practiceplace {
 
     @OneToMany(mappedBy = "practiceplace", orphanRemoval = true)
     @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Language> languages = new ArrayList<>();
+
+    @OneToMany(mappedBy = "practiceplace", orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Application> applications = new ArrayList<>();
 
     @ManyToMany(mappedBy = "favorites", cascade = CascadeType.MERGE)
@@ -81,7 +85,7 @@ public class Practiceplace {
     public Practiceplace() {
     }
 
-    public Practiceplace(String name, String subject, String zip, String place, LocalDate start, LocalDate end, String description, String street, String streetNr, byte[] image, Educator educator, List<Integer> apprenticeYears, List<Requirement> requirements, List<Technology> technologies, List<Application> applications, List<Apprentice> favoritesApprenticePP, int rotationsites, String kindOfDeployment) {
+    public Practiceplace(String name, String subject, String zip, String place, LocalDate start, LocalDate end, String description, String street, String streetNr, byte[] image, Educator educator, List<Integer> apprenticeYears, List<Requirement> requirements, List<Technology> technologies,List<Language> languages, List<Application> applications, List<Apprentice> favoritesApprenticePP, int rotationsites, String kindOfDeployment) {
         this.name = name;
         this.subject = subject;
         this.zip = zip;
@@ -123,6 +127,10 @@ public class Practiceplace {
         this.technologies = technologies;
         for (Technology t : technologies) {
             t.setPracticeplace(this);
+        }
+        this.languages = languages;
+        for (Language l : languages) {
+            l.setPracticeplace(this);
         }
 
         this.applications = applications;
@@ -288,6 +296,14 @@ public class Practiceplace {
         this.technologies = technologies;
     }
 
+    public List<Language> getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(List<Language> languages) {
+        this.languages = languages;
+    }
+
     public String getTempDescription() {
         return tempDescription;
     }
@@ -321,12 +337,12 @@ public class Practiceplace {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Practiceplace that = (Practiceplace) o;
-        return zip == that.zip && Objects.equals(name, that.name) && Objects.equals(subject, that.subject) && Objects.equals(place, that.place) && Objects.equals(start, that.start) && Objects.equals(end, that.end) && Objects.equals(description, that.description) && Objects.equals(street, that.street) && Objects.equals(streetNr, that.streetNr) && Objects.equals(image, that.image) && Objects.equals(apprenticeYears, that.apprenticeYears) && Objects.equals(educator, that.educator) && Objects.equals(requirements, that.requirements) && Objects.equals(technologies, that.technologies) && Objects.equals(applications, that.applications) && Objects.equals(favoritesApprenticePP, that.favoritesApprenticePP);
+        return zip == that.zip && Objects.equals(name, that.name) && Objects.equals(subject, that.subject) && Objects.equals(place, that.place) && Objects.equals(start, that.start) && Objects.equals(end, that.end) && Objects.equals(description, that.description) && Objects.equals(street, that.street) && Objects.equals(streetNr, that.streetNr) && Objects.equals(image, that.image) && Objects.equals(apprenticeYears, that.apprenticeYears) && Objects.equals(educator, that.educator) && Objects.equals(requirements, that.requirements) && Objects.equals(technologies, that.technologies)&& Objects.equals(languages, that.languages)&& Objects.equals(applications, that.applications) && Objects.equals(favoritesApprenticePP, that.favoritesApprenticePP);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, subject, zip, place, start, end, description, street, streetNr, image, apprenticeYears, educator, requirements, technologies, applications, favoritesApprenticePP);
+        return Objects.hash(name, subject, zip, place, start, end, description, street, streetNr, image, apprenticeYears, educator, requirements, technologies,languages, applications, favoritesApprenticePP);
     }
 
     public void setEnd(Date date) {

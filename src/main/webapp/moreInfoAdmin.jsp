@@ -90,6 +90,13 @@
                             </c:forEach>
                         </ul>
                         <br>
+                        <b>Sprachen:</b>
+                        <ul>
+                            <c:forEach items="${sessionScope.ppMoreInfo.languages}" var="language">
+                                <li class="bullet">${language.language}</li>
+                            </c:forEach>
+                        </ul>
+                        <br>
                         <b>Rotationsplätze: </b>${sessionScope.ppMoreInfo.rotationsites}
                     </div>
                     <div class="col-5">

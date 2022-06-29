@@ -415,6 +415,22 @@ public class DAO {
             Connector.getInstance().close();
         }
     }
+    public void insertL(Language l) {
+        EntityManager entityManager = Connector.getInstance().open();
+        try {
+            entityManager.getTransaction().begin();
+
+            entityManager.persist(l);
+
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            if (entityManager.getTransaction() != null)
+                entityManager.getTransaction().rollback();
+            e.printStackTrace();
+        } finally {
+            Connector.getInstance().close();
+        }
+    }
 
     public void removeImgByPPId(int id) {
         EntityManager entityManager = Connector.getInstance().open();
@@ -498,6 +514,24 @@ public class DAO {
                     entityManager.persist(t);
 
                     oldPP.getTechnologies().add(t);
+                }
+            }
+
+            if (pp.getLanguages() != null) {
+                int listSize = oldPP.getLanguages().size();
+                for (int i = listSize - 1; i > -1; i--) {
+                    entityManager.remove(oldPP.getLanguages().get(i));
+                    oldPP.getLanguages().remove(i);
+                }
+
+                for (int i = 0; i < pp.getLanguages().size(); i++) {
+                    Language l = new Language();
+                    l.setLanguage(pp.getLanguages().get(i).getLanguage());
+                    l.setPracticeplace(oldPP);
+
+                    entityManager.persist(l);
+
+                    oldPP.getLanguages().add(l);
                 }
             }
 
@@ -658,6 +692,9 @@ public class DAO {
             }
             for (Technology t : pp.getTechnologies()) {
                 entityManager.persist(t);
+            }
+            for (Language l : pp.getLanguages()) {
+                entityManager.persist(l);
             }
             entityManager.persist(pp);
             entityManager.getTransaction().commit();

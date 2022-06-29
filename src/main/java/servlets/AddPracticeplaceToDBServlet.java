@@ -44,13 +44,14 @@ public class AddPracticeplaceToDBServlet extends HttpServlet {
 
         String attributes = Arrays.toString(getSessionAttrNames(request, null).toArray());
 
-        if (!attributes.contains("zip") || ( (session.getAttribute("subject") != null && ((String)session.getAttribute("subject")).equalsIgnoreCase("PLATTFORMENTWICKLUNG") && !attributes.contains("kindOfDeployment")) || (session.getAttribute("kindOfDeployment") != null && (session.getAttribute("kindOfDeployment").equals("Bitte auswählen...") && (session.getAttribute("kindOfDeployment").equals("Pflichteinsatz") || session.getAttribute("kindOfDeployment").equals("Ergänzungseinsatz") || session.getAttribute("kindOfDeployment").equals("Wahleinsatz"))))) || !attributes.contains("requirements") || !attributes.contains("streetNumber") || !attributes.contains("subject") || !attributes.contains("description") || !attributes.contains("startdate") || !attributes.contains("rotationsites") || !attributes.contains("years") || !attributes.contains("technologies") || !attributes.contains("enddate") || !attributes.contains("street") || !attributes.contains("name") || !attributes.contains("place") || !attributes.contains("user") || session.getAttribute("place").equals("") || session.getAttribute("name").equals("") || session.getAttribute("street").equals("") || session.getAttribute("zip").equals("") || session.getAttribute("requirements").equals("") || session.getAttribute("streetNumber").equals("") || session.getAttribute("subject").equals("Bitte auswählen...") && (session.getAttribute("subject").equals("Applikationsentwicklung") || session.getAttribute("subject").equals("IT-way-up") || session.getAttribute("subject").equals("Mediamatik") || session.getAttribute("subject").equals("Plattformentwicklung")) || session.getAttribute("description").equals("") || session.getAttribute("startdate").equals("") || session.getAttribute("rotationsites").equals("") || session.getAttribute("years").equals("") || session.getAttribute("technologies").equals("") || session.getAttribute("enddate").equals("") ) {
+        if (!attributes.contains("zip") || ( (session.getAttribute("subject") != null && ((String)session.getAttribute("subject")).equalsIgnoreCase("PLATTFORMENTWICKLUNG") && !attributes.contains("kindOfDeployment")) || (session.getAttribute("kindOfDeployment") != null && (session.getAttribute("kindOfDeployment").equals("Bitte auswählen...") && (session.getAttribute("kindOfDeployment").equals("Pflichteinsatz") || session.getAttribute("kindOfDeployment").equals("Ergänzungseinsatz") || session.getAttribute("kindOfDeployment").equals("Wahleinsatz"))))) || !attributes.contains("requirements") || !attributes.contains("streetNumber") || !attributes.contains("subject") || !attributes.contains("description") || !attributes.contains("startdate") || !attributes.contains("rotationsites") || !attributes.contains("years") || !attributes.contains("technologies") || !attributes.contains("language")|| !attributes.contains("enddate") || !attributes.contains("street") || !attributes.contains("name") || !attributes.contains("place") || !attributes.contains("user") || session.getAttribute("place").equals("") || session.getAttribute("name").equals("") || session.getAttribute("street").equals("") || session.getAttribute("zip").equals("") || session.getAttribute("requirements").equals("") || session.getAttribute("streetNumber").equals("") || session.getAttribute("subject").equals("Bitte auswählen...") && (session.getAttribute("subject").equals("Applikationsentwicklung") || session.getAttribute("subject").equals("IT-way-up") || session.getAttribute("subject").equals("Mediamatik") || session.getAttribute("subject").equals("Plattformentwicklung")) || session.getAttribute("description").equals("") || session.getAttribute("startdate").equals("") || session.getAttribute("rotationsites").equals("") || session.getAttribute("years").equals("") || session.getAttribute("technologies").equals("") ||session.getAttribute("language").equals("")|| session.getAttribute("enddate").equals("") ) {
             request.setAttribute("error", true);
 
             session.removeAttribute("name");
             session.removeAttribute("subject");
             session.removeAttribute("requirements");
             session.removeAttribute("technologies");
+            session.removeAttribute("language");
             session.removeAttribute("street");
             session.removeAttribute("streetNumber");
             session.removeAttribute("place");
@@ -71,6 +72,7 @@ public class AddPracticeplaceToDBServlet extends HttpServlet {
                 String subject = (String) session.getAttribute("subject");
                 String[] requirements = ((String) session.getAttribute("requirements")).split(",");
                 String[] technologies = ((String) session.getAttribute("technologies")).split(",");
+                String[] languages = ((String) session.getAttribute("language")).split(",");
                 String street = (String) session.getAttribute("street");
                 String streetnr = (String) session.getAttribute("streetNumber");
                 String place = (String) session.getAttribute("place");
@@ -92,6 +94,7 @@ public class AddPracticeplaceToDBServlet extends HttpServlet {
                 session.removeAttribute("subject");
                 session.removeAttribute("requirements");
                 session.removeAttribute("technologies");
+                session.removeAttribute("language");
                 session.removeAttribute("street");
                 session.removeAttribute("streetNumber");
                 session.removeAttribute("place");
@@ -122,6 +125,12 @@ public class AddPracticeplaceToDBServlet extends HttpServlet {
                         if (!technology.equals("")) {
                             Technology t = new Technology(xss.hsc(technology), p);
                             p.getTechnologies().add(t);
+                        }
+                    }
+                    for (String language : languages) {
+                        if (!language.equals("")) {
+                            Language l = new Language(xss.hsc(language), p);
+                            p.getLanguages().add(l);
                         }
                     }
                     p.setStreet(street);
