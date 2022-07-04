@@ -157,7 +157,7 @@
                             <c:if test="${sessionScope.language != null && sessionScope.language != ''}">
                                 <ul>
                                 <c:forEach items="${sessionScope.language}" var="lang">
-                                        <li>${lang}</li><br>
+                                        <li class="bullet">${lang}</li><br>
                                 </c:forEach>
                                 </ul>
                             </c:if>
