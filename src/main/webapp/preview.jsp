@@ -164,7 +164,6 @@
                             <div id="demo"></div>
                         </ul>
                         <br>
-
                         <b>Rotationsplätze: </b>${sessionScope.rotationsites}
                     </div>
                     <div class="col-6">

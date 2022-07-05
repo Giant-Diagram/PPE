@@ -300,7 +300,7 @@ public class Practiceplace {
         return languages;
     }
 
-    public void setLanguages(List<Language> languages) {
+    public void setLanguages(ArrayList<Language> languages) {
         this.languages = languages;
     }
 

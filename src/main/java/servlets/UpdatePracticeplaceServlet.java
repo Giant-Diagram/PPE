@@ -135,11 +135,12 @@ public class UpdatePracticeplaceServlet extends HttpServlet {
                                 Technology t = new Technology(xss.hsc(technology), p);
                             }
                         }
+
+                        int i =0;
                         for (String language : languages) {
-                            if (!language.equals("")) {
-                                Language l = new Language(xss.hsc(language), p);
-                                p.getLanguages().add(l);
-                            }
+                            Language l = new Language(xss.hsc(language), p);
+                            p.getLanguages().set(i,l);
+                            i++;
                         }
                         p.setStreet(street);
                         p.setRotationsites(rotationsites);
