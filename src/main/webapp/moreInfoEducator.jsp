@@ -98,9 +98,9 @@
                                 <li class="bullet">${language.language}</li>
                             </c:forEach>
                         </ul>
-                            <br>
-                        <b>Rotationsplätze: </b>${sessionScope.ppMoreInfo.rotationsites}
+
                     </div>
+
                     <div class="col-5">
                         <b>Praxisausbilder/in: </b>${sessionScope.ppMoreInfo.educator.email} <!--${sessionScope.ppMoreInfo.educator.email}-->
                         <br><br>
