@@ -52,15 +52,7 @@
                                 </button>
                         <input type="hidden" value="false">
                         </span>
-                        <form action="EditPPServlet" method="post" accept-charset="UTF-8">
-
-                            <span>
-                                <button class="iconButtonPP" value="editbutton" name="button">
-                                    <img src="IMG/edit.svg" alt="edit icon">
-                                </button>
-                                <input type="hidden" value="false">
-                            </span>
-                        </form>
+                        <form action="EditPPServlet" method="post" accept-charset="UTF-8"><input type="hidden" value="2" name="id" id="id"><span><button class="iconButtonPP" value="editbutton" name="button"><img src="IMG/edit.svg" alt="edit icon"></button><input type="hidden" value="false"></span></form>
                     </c:if>
                 </button>
                 <input type="hidden" value="false">
