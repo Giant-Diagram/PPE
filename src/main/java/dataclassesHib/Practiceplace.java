@@ -27,6 +27,7 @@ public class Practiceplace {
     private String subject;
     private String zip;
     private int rotationsites;
+    private int occupied;
 
     @Column(name = "designation")
     private String place;
@@ -85,7 +86,7 @@ public class Practiceplace {
     public Practiceplace() {
     }
 
-    public Practiceplace(String name, String subject, String zip, String place, LocalDate start, LocalDate end, String description, String street, String streetNr, byte[] image, Educator educator, List<Integer> apprenticeYears, List<Requirement> requirements, List<Technology> technologies,List<Language> languages, List<Application> applications, List<Apprentice> favoritesApprenticePP, int rotationsites, String kindOfDeployment) {
+    public Practiceplace(String name, String subject, String zip, String place, LocalDate start, LocalDate end, String description, String street, String streetNr, byte[] image, Educator educator, List<Integer> apprenticeYears, List<Requirement> requirements, List<Technology> technologies,List<Language> languages, List<Application> applications, List<Apprentice> favoritesApprenticePP, int rotationsites, String kindOfDeployment, int occupied) {
         this.name = name;
         this.subject = subject;
         this.zip = zip;
@@ -144,6 +145,7 @@ public class Practiceplace {
         }
 
         this.rotationsites = rotationsites;
+        this.occupied = occupied;
     }
 
 //Getter & Setter
@@ -322,6 +324,14 @@ public class Practiceplace {
 
     public void setRotationsites(int rotationsites) {
         this.rotationsites = rotationsites;
+    }
+
+    public int getOccupied() {
+        return this.occupied;
+    }
+
+    public void setOccupied(int occupied) {
+        this.occupied = occupied;
     }
 
     public String getKindOfDeployment() {
