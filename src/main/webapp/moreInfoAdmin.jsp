@@ -133,7 +133,7 @@
         </div>
     </div>
     <div class="divapplybutton">
-        <jsp:include page="INCLUDE/applyButtonBack.html"/>
+        <a href="Home" class="applyButton" style="text-decoration: none"><button type="submit" class="applyButton">Zurück</button></a>
     </div>
     <div class="row">
         <c:if test="${sessionScope.ppMoreInfo.kindOfDeployment != null}">
