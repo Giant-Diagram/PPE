@@ -169,7 +169,7 @@
             </c:otherwise>
         </c:choose>
         <div class="divapplybutton">
-            <button type="submit" class="applyButton" onclick="history.back()">Zurück </button>
+            <a href="Home" class="applyButton" style="text-decoration: none"><button type="submit" class="applyButton">Zurück</button></a>
         </div>
     </div>
 </div>
