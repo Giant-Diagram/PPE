@@ -14,6 +14,7 @@
           type="text/css">
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
 </head>
 <body>
 <div id="wrappermoreInfo">
@@ -151,21 +152,8 @@
                         </ul>
                         <br>
 
-                        <br>
-                        <b>Sprachen:</b>
-                        <ul>
-                            <c:if test="${sessionScope.language != null && sessionScope.language != ''}">
-                                <ul>
-                                <c:forEach items="${sessionScope.language}" var="lang">
-                                        <li>${lang}</li><br>
-                                </c:forEach>
-                                </ul>
-                            </c:if>
-                            <div id="demo"></div>
-                        </ul>
-                        <br>
 
-                        <b>Rotationsplätze: </b>${sessionScope.rotationsites}
+                        <b>Rotationsplätze: </b><span id="rotationTextHolder"> ${sessionScope.occupied} von ${sessionScope.rotationsites} besetzt</span>
                     </div>
                     <div class="col-6">
                         <b>Praxisausbilder/in: </b>
@@ -218,6 +206,22 @@
                                 </c:if>
                             </c:forEach>
                         </c:if>
+<br>
+                        <b>Sprachen:</b>
+                        <ul>
+                            <c:if test="${sessionScope.language != null && sessionScope.language != ''}">
+
+                                    <c:forEach items="${sessionScope.language}" var="lang">
+                                         ${lang}
+                                        <c:if test="${sessionScope.years.indexOf(lang) != fn:length(sessionScope.lang) - 1 && fn:length(sessionScope.lang) != 1}">
+
+                                        </c:if>
+                                    </c:forEach>
+
+                            </c:if>
+                            <div id="demo"></div>
+                        </ul>
+
                     </div>
                 </div>
 
