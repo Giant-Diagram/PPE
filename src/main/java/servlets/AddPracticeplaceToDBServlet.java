@@ -128,10 +128,8 @@ public class AddPracticeplaceToDBServlet extends HttpServlet {
                         }
                     }
                     for (String language : languages) {
-                        if (!language.equals("")) {
                             Language l = new Language(xss.hsc(language), p);
                             p.getLanguages().add(l);
-                        }
                     }
                     p.setStreet(street);
                     p.setRotationsites(rotationsites);

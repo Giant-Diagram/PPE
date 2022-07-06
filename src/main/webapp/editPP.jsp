@@ -186,8 +186,8 @@
 
             <!-- SELECT FOR THE REQUIREMENTS OF THE PRACTICEPLACE -->
             <div class="col form-floating mb-3">
-                <select class="form-select form-control addPractice" id="subjects" multiple data-allow-new="true"
-                        onchange="fetchRequirementsPracticeplace(this.value);">
+                <select class="form-select form-control addPractice" id="subjects" multiple
+                        data-allow-new="true" oninput="fetchRequirementsPracticeplace(this.value);">
                     <option selected disabled hidden value="">Anforderungen...</option>
                     <c:forEach items="${sessionScope.editPP.requirements}" var="requirement">
                         <option value="${requirement.requirement}"
@@ -459,7 +459,6 @@
                             loading="lazy"
                             allowtransparency="true" frameborder="0" scrolling="no"
                             style="overflow: hidden; background-color: #FFFFFF; pointer-events: none; width:100%;">
-
                     </iframe>
                 </div>
             </div>
@@ -484,8 +483,15 @@
     const locationServlet = 'Preview';
 
     var years = ${sessionScope.editPP.apprenticeYears};
-    var language= ${sessionScope.editPP.languages};
-
+    //var language= ${sessionScope.editPP.languages};
+    var language= [];
+    if(document.getElementById("Deutsch").checked == true){
+        language.push("Deutsch")
+    }
+    if(document.getElementById("English").checked == true){
+        language.push("English")
+    }
+    fetch(locationServlet + '?language=' + language)
     fetch(locationServlet + '?years=' + years);
 
     resizeArea(document.getElementById("description"));
