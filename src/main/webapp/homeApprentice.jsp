@@ -73,7 +73,7 @@
             <div class="col-5">
                 <div class="buttons_homepage">
                     <button class="iconButton btn" onclick="document.getElementById('exportExcel').submit();">
-                        <img src="IMG/file_download.svg" alt="file download icon" class="iconsmainbuttons">
+                        <img src="IMG/excel_downlod.svg" alt="file download icon" class="iconsmainbuttons">
                     </button>
                 </div>
             </div>

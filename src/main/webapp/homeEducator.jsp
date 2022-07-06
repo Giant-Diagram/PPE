@@ -100,7 +100,7 @@
                 </div>
                 <div class="buttons_homepage">
                     <button class="iconButton btn" onclick="document.getElementById('exportExcel').submit();">
-                        <img src="IMG/file_download.svg" alt="file download icon" class="iconsmainbuttons">
+                        <img src="IMG/excel_downlod.svg" alt="file download icon" class="iconsmainbuttons">
 <%--                        <span><h5>Zu Excel Exportieren</h5></span>--%>
                     </button>
                 </div>
