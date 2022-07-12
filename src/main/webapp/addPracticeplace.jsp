@@ -267,6 +267,12 @@
                     <div id="feedback"></div>
                 </div>
 
+                <label class="switch">
+                    Archivieren
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+
                 <!-- all fields are required -->
                 <label class="requiredfieldslabel">
                     <span class="requiredfields">*</span>
