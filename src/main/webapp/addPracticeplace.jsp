@@ -267,9 +267,10 @@
                     <div id="feedback"></div>
                 </div>
 
+
                 <label class="switch">
                     Archivieren
-                    <input type="checkbox">
+                    <input type="checkbox" name="archived">
                     <span class="slider round"></span>
                 </label>
 
