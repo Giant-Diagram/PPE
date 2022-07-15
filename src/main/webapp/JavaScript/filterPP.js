@@ -73,10 +73,12 @@ function setPP(ppListJson) {
             '</div>';
     } else {
         for (let i = 0; i < ppList.length; i++) {
-            const pp = ppList[i];
-            console.log(pp)
+            let pp = ppList[i];
             //hier war andi
-
+            if(pp.archived==1){
+                console.log(pp)
+                break
+            }
             if (ppSelectValue.toUpperCase() === 'ALLE') {
                 ppSelect.innerHTML = ppSelect.innerHTML +
                     '<option>' + pp.name + '</option>';

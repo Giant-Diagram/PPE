@@ -224,7 +224,7 @@ public class FilterAllPPAdmin extends HttpServlet {
                 practiceplace.put("enddateMonth", filteredPracticeplace.getEnd().getMonthValue());
                 practiceplace.put("enddateYear", filteredPracticeplace.getEnd().getYear());
                 practiceplace.put("place", URLEncoder.encode(filteredPracticeplace.getPlace(), String.valueOf(StandardCharsets.UTF_8)));
-
+                practiceplace.put("archived", filteredPracticeplace.getArchived());
                 practiceplacesJsonObject.add(practiceplace);
             }
             filteredPracticeplacesJson.putAll(practiceplacesJsonObject);

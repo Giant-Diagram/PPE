@@ -106,6 +106,11 @@ function setPP(ppListJson) {
         for (let i = 0; i < ppList.length; i++) {
             var pp = ppList[i];
 
+            if(pp.archived==1){
+                console.log(pp)
+                break
+            }
+
             if (ppSelectValue.toUpperCase() === 'ALLE') {
                 ppSelect.innerHTML = ppSelect.innerHTML +
                     '<option>' + pp.name + '</option>';

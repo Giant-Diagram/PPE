@@ -207,7 +207,7 @@ public class FilterPP extends HttpServlet {
                 educatorJson.put("gpn", filteredPracticeplace.getEducator().getGpn());
                 practiceplace.put("educator", educatorJson);
                 practiceplace.put("tempDescription", filteredPracticeplace.getTempDescription());
-
+                practiceplace.put("archived", filteredPracticeplace.getArchived());
                 JSONArray technologies = new JSONArray();
                 ArrayList<String> technologiesString = new ArrayList<>();
                 for (Technology technology : filteredPracticeplace.getTechnologies())
