@@ -63,7 +63,7 @@ public class UpdatePracticeplaceServlet extends HttpServlet {
             //Lists all attributes from Sessionscope that are setted
             String attributes = Arrays.toString(getSessionAttrNames(request, null).toArray());
 
-            if (!attributes.contains("zip") || (session.getAttribute("subject") != null && (((String) session.getAttribute("subject")).equalsIgnoreCase("PLATTFORMENTWICKLUNG") && !attributes.contains("kindOfDeployment")) || (session.getAttribute("kindOfDeployment") != null && (session.getAttribute("kindOfDeployment").equals("Bitte auswählen...") && (session.getAttribute("kindOfDeployment").equals("Pflichteinsatz") || session.getAttribute("kindOfDeployment").equals("Ergänzungseinsatz") || session.getAttribute("kindOfDeployment").equals("Wahleinsatz"))))) || !attributes.contains("requirements") || !attributes.contains("streetNumber") || !attributes.contains("subject") || !attributes.contains("description") || !attributes.contains("startdate") || !attributes.contains("rotationsites") || !attributes.contains("years") || !attributes.contains("technologies") ||!attributes.contains("language")|| !attributes.contains("enddate") || !attributes.contains("street") || !attributes.contains("name") || !attributes.contains("place") || !attributes.contains("user") || session.getAttribute("place").equals("") || session.getAttribute("name").equals("") || session.getAttribute("street").equals("") || session.getAttribute("zip").equals("") || session.getAttribute("requirements").equals("") || session.getAttribute("streetNumber").equals("") || session.getAttribute("subject").equals("Bitte auswählen...") && (session.getAttribute("subject").equals("Applikationsentwicklung") || session.getAttribute("subject").equals("IT-way-up") || session.getAttribute("subject").equals("Mediamatik") || session.getAttribute("subject").equals("Plattformentwicklung")) || session.getAttribute("description").equals("") || session.getAttribute("startdate").equals("") || session.getAttribute("rotationsites").equals("") || session.getAttribute("years").equals("") || session.getAttribute("technologies").equals("") ||session.getAttribute("language").equals("")|| session.getAttribute("enddate").equals("")) {
+            if (!attributes.contains("zip") || (session.getAttribute("subject") != null && (((String) session.getAttribute("subject")).equalsIgnoreCase("PLATTFORMENTWICKLUNG") && !attributes.contains("kindOfDeployment")) || (session.getAttribute("kindOfDeployment") != null && (session.getAttribute("kindOfDeployment").equals("Bitte auswählen...") && (session.getAttribute("kindOfDeployment").equals("Pflichteinsatz") || session.getAttribute("kindOfDeployment").equals("Ergänzungseinsatz") || session.getAttribute("kindOfDeployment").equals("Wahleinsatz"))))) || !attributes.contains("requirements") || !attributes.contains("streetNumber") || !attributes.contains("subject") || !attributes.contains("description") || !attributes.contains("startdate") || !attributes.contains("rotationsites") || !attributes.contains("years") || !attributes.contains("technologies") ||!attributes.contains("language")||!attributes.contains("archived")||!attributes.contains("enddate") || !attributes.contains("street") || !attributes.contains("name") || !attributes.contains("place") || !attributes.contains("user") || session.getAttribute("place").equals("") || session.getAttribute("name").equals("") || session.getAttribute("street").equals("") || session.getAttribute("zip").equals("") || session.getAttribute("requirements").equals("") || session.getAttribute("streetNumber").equals("") || session.getAttribute("subject").equals("Bitte auswählen...") && (session.getAttribute("subject").equals("Applikationsentwicklung") || session.getAttribute("subject").equals("IT-way-up") || session.getAttribute("subject").equals("Mediamatik") || session.getAttribute("subject").equals("Plattformentwicklung")) || session.getAttribute("description").equals("") || session.getAttribute("startdate").equals("") || session.getAttribute("rotationsites").equals("") || session.getAttribute("years").equals("") || session.getAttribute("archived").equals("") || session.getAttribute("technologies").equals("") ||session.getAttribute("language").equals("")|| session.getAttribute("enddate").equals("")) {
                 request.setAttribute("error", true);
 
                 session.removeAttribute("name");
@@ -79,6 +79,7 @@ public class UpdatePracticeplaceServlet extends HttpServlet {
                 session.removeAttribute("startdate");
                 session.removeAttribute("enddate");
                 session.removeAttribute("years");
+                session.removeAttribute("archived");
                 session.removeAttribute("rotationsites");
                 session.removeAttribute("kindOfDeployment");
 
@@ -114,7 +115,12 @@ public class UpdatePracticeplaceServlet extends HttpServlet {
                     } catch (ClassCastException ex) {
                         rotationsites = (int) session.getAttribute("rotationsites");
                     }
-
+                    int archived;
+                    try{
+                        archived = Integer.parseInt(((String)session.getAttribute("archived")).replaceAll("\\s+", ""));
+                    } catch (ClassCastException ex){
+                        archived = (int) session.getAttribute("archived");
+                    }
                     //Tempdate for setting the last of month
                     LocalDate tempDate = (LocalDate.of(1, Integer.parseInt(enddate[0].replaceAll("\\s+", "")), 1));
 
@@ -149,6 +155,7 @@ public class UpdatePracticeplaceServlet extends HttpServlet {
                         p.setZip(zip);
                         p.setDescription(description);
                         p.setKindOfDeployment(kindOfDeployment);
+                        p.setArchived(archived);
 
                         //Replaces all spaces (space can cause a paresException)
                         p.setStart(LocalDate.of(Integer.parseInt(startDate[1].replaceAll("\\s+", "")), Integer.parseInt(startDate[0].replaceAll("\\s+", "")), 1));
@@ -182,6 +189,7 @@ public class UpdatePracticeplaceServlet extends HttpServlet {
                             session.removeAttribute("startdate");
                             session.removeAttribute("enddate");
                             session.removeAttribute("years");
+                            session.removeAttribute("archived");
                             session.removeAttribute("rotationsites");
                             session.removeAttribute("kindOfDeployment");
 
@@ -212,6 +220,7 @@ public class UpdatePracticeplaceServlet extends HttpServlet {
                     session.removeAttribute("startdate");
                     session.removeAttribute("enddate");
                     session.removeAttribute("years");
+                    session.removeAttribute("archived");
                     session.removeAttribute("rotationsites");
                     session.removeAttribute("kindOfDeployment");
 

@@ -8,24 +8,6 @@ function confirmdeletepp(id) {
 }
 
 
-window.addEventListener("scroll", function(){
-    let scroll = window.scrollY;
-    // 207 when at top
-    if (scroll > 200) {
-        document.getElementById("filter").style = `
-        position: fixed;
-        top: 54px;
-        width: 15.5% !important;
-        `
-    } else {
-        document.getElementById("filter").style = `
-        
-        position: static;
-        `
-
-    }
-});
-
 function filterPP() {
     //Reading filterPP-inputs
     const formInputs = document.getElementsByClassName('filter');

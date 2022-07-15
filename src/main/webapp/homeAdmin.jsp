@@ -56,7 +56,7 @@
     <jsp:include page="INCLUDE/notificationheader.html"/>
 </c:when>
 <c:otherwise>
-    <jsp:include page="INCLUDE/header.html"/>$---
+    <jsp:include page="INCLUDE/header.html"/>
 </c:otherwise>
 </c:choose>
 <div id="wrapper">

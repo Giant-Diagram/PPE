@@ -85,7 +85,7 @@
         <!-- right part (pagecontent) -->
         <div class="col-10 rightbox" id="rightbox">
         </div>
-    </div>
+§    </div>
 </div>
 <div id="favoriteConfirmNotification" style="display: none;">
     <jsp:include page="INCLUDE/favoritconfirmpopup.html"/>

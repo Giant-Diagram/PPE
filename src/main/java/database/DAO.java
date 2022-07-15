@@ -499,6 +499,9 @@ public class DAO {
             if (pp.getSubject() != null && !pp.getSubject().equals(oldPP.getSubject()))
                 oldPP.setSubject(pp.getSubject());
 
+            if (pp.getArchived() != oldPP.getArchived())
+                oldPP.setArchived(pp.getArchived());
+
             if (pp.getTechnologies() != null) {
                 int listSize = oldPP.getTechnologies().size();
                 for (int i = listSize - 1; i > -1; i--) {

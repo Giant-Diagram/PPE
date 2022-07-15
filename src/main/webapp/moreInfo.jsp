@@ -131,7 +131,6 @@
                         </c:forEach>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -160,7 +159,7 @@
                     		<jsp:include page="INCLUDE/applyButtonApplicated.html"/>
                 		</div>
                 	</c:when>
-                	<c:otherwise> 
+                	<c:otherwise>
                 		<div class="divapplybutton">
                     		<jsp:include page="INCLUDE/applyButtonFull.html"/>
                 		</div>

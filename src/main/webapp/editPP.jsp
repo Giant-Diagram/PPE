@@ -203,7 +203,6 @@
             </div>
 
             <!-- SELECT FOR THE Lanuages OF THE PRACTICEPLACE -->
-
             <div class="form-check">
                 <input type="checkbox" value="Deutsch" name="language" id="Deutsch" class="yearsPracticeplaceLeft"
                 <c:forEach items="${sessionScope.editPP.languages}" var="language">
@@ -268,6 +267,21 @@
                 </div>
             </div>
 
+            <div class="col form-floating mb-3">
+                <input style="width: 100%;!important;" type="text" autocomplete="off" name="archived"
+                       id="archived"
+                       value="${sessionScope.editPP.archived}"
+                       class="form-control" oninput="fetchPreview(this);">
+                <c:set var="archived" scope="session" value="${sessionScope.editPP.archived}"/>
+
+                <label for="archived" class="label">Archiviert
+                    <span class="requiredfields">*</span>
+                </label>
+
+            </div>
+
+
+            <c:set var="startdate" scope="session" value="${sessionScope.editPP.start}"/>
             <div class="row mb-3">
                 <!-- TEXTFIELD FOR THE ZIP OF THE PLACE -->
                 <div class="col-4 form-floating plz">
@@ -282,7 +296,7 @@
                         <span class="requiredfields">*</span>
                     </label>
                 </div>
-                <!-- TEXTFIELD FOR THE NAME OF THE PLACE -->
+                <!-- TEXTFIELD FOR THE NAME OF THE PLACE-->
                 <div class="col-8 form-floating location">
                     <input type="text" autocomplete="off" name="place" id="practiceplacePlace"
                            class="form-control"
@@ -343,6 +357,7 @@
                 </label>
             </div>
 
+
             <!-- BOXES FOR THE YEARS OF THE PRACTICPLACE -->
             <div class="form-check">
                 <label for="endDate" class="label" id="yearsLabel">Lehrjahre:
@@ -381,7 +396,6 @@
                 >
                 <label for="years4" class="label">4</label><br>
             </div>
-
 
             <%-- FIELD FOR FILE UPLOAD --%>
             <div class="col form-floating mb-3">
@@ -472,8 +486,16 @@
     if(document.getElementById("English").checked == true){
         language.push("English")
     }
+    var archived = [];
+    if(document.getElementById("archivedPractisplace").checked == true){
+        archived.push(1);
+    }if (document.getElementById("archivedPractisplace").checked == false){
+        archived.push(0);
+    }
+    fetch(locationServlet + '?archived' +archived)
     fetch(locationServlet + '?language=' + language)
     fetch(locationServlet + '?years=' + years);
+
 
     resizeArea(document.getElementById("description"));
 
@@ -539,6 +561,23 @@
         fetch(locationServlet + '?languages=' + value);
         document.getElementById('preview').contentWindow.location.reload();
     }
+    function fetchArchivedPracticeplace(value) {
+        fetch(locationServlet + '?archived=' + value);
+        document.getElementById('preview').contentWindow.location.reload();
+    }
+    document.querySelector("input[id=archivedPractisplace]").addEventListener('change', function () {
+        console.log(this.value)
+        if (this.checked) {
+            archived.push(this.value);
+        } else {
+            archived.splice(years.indexOf(this.value), 1);
+        }
+
+        archived.sort((a, b) => a - b);
+        fetch(locationServlet + '?archived=' + archived)
+            .then(document.getElementById('preview').contentWindow.location.reload());
+    });
+
     document.querySelector("input[id=Deutsch]").addEventListener('change', function () {
         console.log(this.value)
         if (this.checked) {

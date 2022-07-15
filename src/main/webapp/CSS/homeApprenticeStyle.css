@@ -175,7 +175,7 @@ body {
 }
 
 .leftbox #filter, .leftbox #sortBox {
-    width: 100% !important;
+    width: 15.56%;
     background-color: var(--white);
     border: 1px solid var(--border);
 }
@@ -246,7 +246,8 @@ body {
 #filter, #sortBox {
     margin-right: 5px;
     margin-left: 5px;
-    position: static;
+    position: fixed;!important;
+    width: 15.56%;
 }
 
 
@@ -470,6 +471,7 @@ input:checked + .slider:before {
 }
 @media (max-height: 50px) {
     #filter{
-        position:fixed;
+        position:fixed;!important;
+        width: 15.56%;
     }
 }

@@ -231,15 +231,6 @@
                         <span class="requiredfields">*</span>
                     </label>
                 </div>
-                <div class="col form-floating mb-3">
-                    <input title="Es wird jeweils der letzte Tag des Monats gewertet" type="checkbox"
-                           name="archived" id="archived"
-                           class="form-control datepicker addPractice">
-                    <label for="archived" class="label">Enddatum
-                        <span class="requiredfields">*</span>
-                    </label>
-                </div>
-
                 <!-- BOXES FOR THE YEARS OF THE PRACTICPLACE -->
                 <div class="form-check">
                     <label class="label" id="yearsLabel">Lehrjahre:
@@ -266,13 +257,6 @@
                 <div class="col form-floating mb-3">
                     <div id="feedback"></div>
                 </div>
-
-
-                <label class="switch">
-                    Archivieren
-                    <input type="checkbox" name="archived">
-                    <span class="slider round"></span>
-                </label>
 
                 <!-- all fields are required -->
                 <label class="requiredfieldslabel">
