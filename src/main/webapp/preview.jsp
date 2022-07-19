@@ -157,13 +157,14 @@
                             <c:if test="${sessionScope.language != null && sessionScope.language != ''}">
                                 <ul>
                                 <c:forEach items="${sessionScope.language}" var="lang">
-                                        <li class="bullet">${lang}</li><br>
+                                        <li>${lang}</li><br>
                                 </c:forEach>
                                 </ul>
                             </c:if>
                             <div id="demo"></div>
                         </ul>
                         <br>
+
                         <b>Rotationsplätze: </b>${sessionScope.rotationsites}
                     </div>
                     <div class="col-6">

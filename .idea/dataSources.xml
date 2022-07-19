@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+<<<<<<< HEAD
     <data-source source="LOCAL" name="ppe@localhost" uuid="4fcf4eba-0738-44ea-9968-c365c90267b3">
       <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
@@ -13,6 +14,13 @@
       <synchronize>true</synchronize>
       <jdbc-driver>net.sourceforge.jtds.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:jtds:sqlserver://./ppe</jdbc-url>
+=======
+    <data-source source="LOCAL" name="@localhost" uuid="ed6659ce-5f4c-4066-a1be-9f3db9d97403">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://localhost:1433</jdbc-url>
+>>>>>>> origin/master
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

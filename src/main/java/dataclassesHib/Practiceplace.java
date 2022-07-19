@@ -27,7 +27,6 @@ public class Practiceplace {
     private String subject;
     private String zip;
     private int rotationsites;
-    private int archived;
 
     @Column(name = "designation")
     private String place;
@@ -85,7 +84,8 @@ public class Practiceplace {
 
     public Practiceplace() {
     }
-    public Practiceplace(String name, String subject, String zip, String place, LocalDate start, LocalDate end, String description, String street, String streetNr, byte[] image, Educator educator, List<Integer> apprenticeYears, List<Requirement> requirements, List<Technology> technologies, List<Language> languages, List<Application> applications, List<Apprentice> favoritesApprenticePP, int rotationsites, String kindOfDeployment,int archived) {
+
+    public Practiceplace(String name, String subject, String zip, String place, LocalDate start, LocalDate end, String description, String street, String streetNr, byte[] image, Educator educator, List<Integer> apprenticeYears, List<Requirement> requirements, List<Technology> technologies,List<Language> languages, List<Application> applications, List<Apprentice> favoritesApprenticePP, int rotationsites, String kindOfDeployment) {
         this.name = name;
         this.subject = subject;
         this.zip = zip;
@@ -144,20 +144,10 @@ public class Practiceplace {
         }
 
         this.rotationsites = rotationsites;
-        this.archived = archived;
     }
 
 //Getter & Setter
 
-
-    public int getArchived() {
-        return archived;
-    }
-
-    public void setArchived(int archived) {
-        this.archived = archived;
-    }
-//jenaya ish blöd
     public int getId() {
         return id;
     }
