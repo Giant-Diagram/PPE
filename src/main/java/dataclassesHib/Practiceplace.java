@@ -157,7 +157,7 @@ public class Practiceplace {
     public void setArchived(int archived) {
         this.archived = archived;
     }
-
+//jenaya ish blöd
     public int getId() {
         return id;
     }
