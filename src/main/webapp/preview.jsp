@@ -167,8 +167,9 @@
 
                         <b>Rotationsplätze: </b>${sessionScope.rotationsites}
                     </div>
+                    <!--Status kommt hier hin -->
                     <div class="col-6">
-                        <b>Praxisausbilder/in: </b>
+                        <b>Praxisausbilder/in: </b><
                         <c:choose>
                             <c:when test="${sessionScope.user.role.toLowerCase() == 'admin' || sessionScope.user.role.toLowerCase() == 'owner'}">
                                 ${sessionScope.editPP.educator.firstname} ${sessionScope.editPP.educator.lastname}
