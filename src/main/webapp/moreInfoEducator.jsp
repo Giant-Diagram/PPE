@@ -52,7 +52,15 @@
                                 </button>
                         <input type="hidden" value="false">
                         </span>
-                        <form action="EditPPServlet" method="post" accept-charset="UTF-8"><input type="hidden" value="2" name="id" id="id"><span><button class="iconButtonPP" value="editbutton" name="button"><img src="IMG/edit.svg" alt="edit icon"></button><input type="hidden" value="false"></span></form>
+                        <form action="EditPPServlet" method="post" accept-charset="UTF-8">
+
+                            <span>
+                                <button class="iconButtonPP" value="editbutton" name="button">
+                                    <img src="IMG/edit.svg" alt="edit icon">
+                                </button>
+                                <input type="hidden" value="false">
+                            </span>
+                        </form>
                     </c:if>
                 </button>
                 <input type="hidden" value="false">
@@ -126,7 +134,7 @@
         </div>
     </div>
     <div class="divapplybutton">
-        <a href="Home" class="applyButton" style="text-decoration: none"><button type="submit" class="applyButton">Zurück</button></a>
+        <button type="submit" class="applyButton" onclick="history.back()">Zurück </button>
 
     </div>
     <div class="row">

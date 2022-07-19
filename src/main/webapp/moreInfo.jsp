@@ -100,7 +100,7 @@
                             </c:forEach>
                         </ul>
                         <br>
-                        <b>Rotationsplätze: </b>${sessionScope.ppMoreInfo.rotationsites}
+                        <b>Rotationsplätze: </b>${sessionScope.ppMoreInfo.rotationsites} von ${sessionScope.ppMoreInfo.rotationsites} Besetzt
                     </div>
                     <div class="col-5">
                         <b>Praxisausbilder/in: </b>${sessionScope.ppMoreInfo.educator.email}

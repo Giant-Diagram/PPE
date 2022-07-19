@@ -135,7 +135,7 @@
             </div>
 
             <!-- SELECT FOR THE KIND OF DEPLOYMENT -->
-            <div class="col form-floating mb-3" id="kodDiv"
+            <div class="col form-floating mb-3 kodDiv"
                     <c:if test="${!(sessionScope.editPP.subject).equals('Plattformentwicklung')}">
                         style="display: none"
                     </c:if>
@@ -221,9 +221,9 @@
                 >
                 <label for="English" class="label">English</label><br>
             </div>
-
+            <div class="row mb-3">
             <!-- INPUT FOR ROTATIONSITES OF THE PRACTICEPLACE -->
-            <div class="col form-floating mb-3">
+                <div class="col-6 form-floating street">
                 <input min="1" autocomplete="off" type="number" name="rotationsites"
                        id="rotationsitesPracticeplace"
                        value="${sessionScope.editPP.rotationsites}"
@@ -235,8 +235,25 @@
                 <label for="rotationsitesPracticeplace" class="label">Anz. Rotationsplätze
                     <span class="requiredfields">*</span>
                 </label>
-            </div>
 
+
+            </div>
+                <div class="col-6 form-floating streetnumber">
+                <input min="0" autocomplete="off" type="number" name="occupied"
+                       id="occupied"
+                       value="${sessionScope.editPP.occupied}"
+                       class="form-control"
+                       oninput="fetchPreview(this);">
+
+                <c:set var="occupied" scope="session" value="${sessionScope.editPP.occupied}"/>
+
+                <label for="occupied" class="label">Anz. Besetzte Rotationsplätze
+                    <span class="requiredfields">*</span>
+                </label>
+
+
+            </div>
+</div>
             <div class="row mb-3">
                 <!-- TEXTFIELD FOR THE NAME OF THE STREET -->
                 <div class="col-8 form-floating street">
@@ -266,6 +283,22 @@
                     </label>
                 </div>
             </div>
+
+                <!-- INPUT FOR ROTATIONSITES OF THE PRACTICEPLACE -->
+                <div class="col-6 form-floating mb-3">
+                    <input min="1" autocomplete="off" type="number" name="rotationsites"
+                           id="rotationsitesPracticeplace"
+                           value="${sessionScope.editPP.rotationsites}"
+                           class="form-control"
+                           oninput="fetchPreview(this);">
+
+                    <c:set var="rotationsites" scope="session" value="${sessionScope.editPP.rotationsites}"/>
+
+                    <label for="rotationsitesPracticeplace" class="label">Anz. Rotationsplätze
+                        <span class="requiredfields">*</span>
+                    </label>
+                </div>
+
 
             <div class="col form-floating mb-3">
                 <input style="width: 100%;!important;" type="text" autocomplete="off" name="archived"
@@ -459,7 +492,9 @@
                     </iframe>
                 </div>
             </div>
-        </div>
+        </form>
+
+    </div>
     </div>
 </div>
 <jsp:include page="INCLUDE/footer.html"/>
@@ -674,12 +709,14 @@
 
     function updateForm(element) {
         const value = element.value;
-        const kod = document.getElementById('kodDiv');
+        const kod = document.getElementsByClassName('kodDiv');
 
-        if (value.toUpperCase() === 'PLATTFORMENTWICKLUNG') {
-            kod.removeAttribute("style");
-        } else {
-            kod.setAttribute("style", "display:none");
+        for (let i = 0; i < kod.length; i++) {
+            if (value.toUpperCase() === "PLATTFORMENTWICKLUNG") {
+                kod[i].removeAttribute("style");
+            } else {
+                kod[i].setAttribute("style", "display:none");
+            }
         }
 
     }
