@@ -175,7 +175,7 @@ public class Practiceplace {
     public void setZip(String zip) {
         this.zip = zip;
     }
-
+//jene
     public String getPlace() {
         return place;
     }
