@@ -83,13 +83,13 @@
 
                 <!-- TEXTAREA FOR THE SHORTDESCRIPTION OF THE PRACTICEPLACE Jenaya-->
                 <div class="col form-floating mb-3">
-                    <textarea maxlength="200" name="description" id="shortDescription"
+                    <textarea maxlength="200" name="shortDescription" id="shortDescription"
                               class="form-control addPractice"
                               oninput="/*fetchPreview(this);*/ this.style.height = ''; this.style.height = this.scrollHeight + 'px';" required></textarea>
-                    <label for="description" class="label">Kurzbeschreibung für die Startseite
+                    <label for="shortDescription" class="label">Kurzbeschreibung für die Startseite
                         <span class="requiredfields">*</span>
                     </label>
-                    <p id="shortDescriptionCounter">Zeichen übrig: <span id="chars" style="float: right">200</span>
+                    <p id="shortDescriptionCounter">Zeichen übrig: <span id="shortChars" style="float: right">200</span>
                 </div>
 
                 <!-- TEXTAREA FOR THE DESCRIPTION OF THE PRACTICEPLACE -->

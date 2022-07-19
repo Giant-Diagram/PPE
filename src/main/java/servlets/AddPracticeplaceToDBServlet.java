@@ -44,7 +44,9 @@ public class AddPracticeplaceToDBServlet extends HttpServlet {
 
         String attributes = Arrays.toString(getSessionAttrNames(request, null).toArray());
 
-        if (!attributes.contains("zip") || ( (session.getAttribute("subject") != null && ((String)session.getAttribute("subject")).equalsIgnoreCase("PLATTFORMENTWICKLUNG") && !attributes.contains("kindOfDeployment")) || (session.getAttribute("kindOfDeployment") != null && (session.getAttribute("kindOfDeployment").equals("Bitte auswählen...") && (session.getAttribute("kindOfDeployment").equals("Pflichteinsatz") || session.getAttribute("kindOfDeployment").equals("Ergänzungseinsatz") || session.getAttribute("kindOfDeployment").equals("Wahleinsatz"))))) || !attributes.contains("requirements") || !attributes.contains("streetNumber") || !attributes.contains("subject") || !attributes.contains("description") || !attributes.contains("startdate") || !attributes.contains("rotationsites") || !attributes.contains("years") || !attributes.contains("technologies") || !attributes.contains("language")|| !attributes.contains("enddate") || !attributes.contains("street") || !attributes.contains("name") || !attributes.contains("place") || !attributes.contains("user") || session.getAttribute("place").equals("") || session.getAttribute("name").equals("") || session.getAttribute("street").equals("") || session.getAttribute("zip").equals("") || session.getAttribute("requirements").equals("") || session.getAttribute("streetNumber").equals("") || session.getAttribute("subject").equals("Bitte auswählen...") && (session.getAttribute("subject").equals("Applikationsentwicklung") || session.getAttribute("subject").equals("IT-way-up") || session.getAttribute("subject").equals("Mediamatik") || session.getAttribute("subject").equals("Plattformentwicklung")) || session.getAttribute("description").equals("") || session.getAttribute("startdate").equals("") || session.getAttribute("rotationsites").equals("") || session.getAttribute("years").equals("") || session.getAttribute("technologies").equals("") ||session.getAttribute("language").equals("")|| session.getAttribute("enddate").equals("") ) {
+        if (!attributes.contains("zip") || ( (session.getAttribute("subject") != null && ((String)session.getAttribute("subject")).equalsIgnoreCase("PLATTFORMENTWICKLUNG") && !attributes.contains("kindOfDeployment")) || (session.getAttribute("kindOfDeployment") != null && (session.getAttribute("kindOfDeployment").equals("Bitte auswählen...") && (session.getAttribute("kindOfDeployment").equals("Pflichteinsatz") || session.getAttribute("kindOfDeployment").equals("Ergänzungseinsatz") || session.getAttribute("kindOfDeployment").equals("Wahleinsatz"))))) || !attributes.contains("requirements") || !attributes.contains("streetNumber") || !attributes.contains("subject") || !attributes.contains("description")||
+                !attributes.contains("shortDescription") || !attributes.contains("startdate") || !attributes.contains("rotationsites") || !attributes.contains("years") || !attributes.contains("technologies") || !attributes.contains("language")|| !attributes.contains("enddate") || !attributes.contains("street") || !attributes.contains("name") || !attributes.contains("place") || !attributes.contains("user") || session.getAttribute("place").equals("") || session.getAttribute("name").equals("") || session.getAttribute("street").equals("") || session.getAttribute("zip").equals("") || session.getAttribute("requirements").equals("") || session.getAttribute("streetNumber").equals("") || session.getAttribute("subject").equals("Bitte auswählen...")
+                && (session.getAttribute("subject").equals("Applikationsentwicklung") || session.getAttribute("subject").equals("IT-way-up") || session.getAttribute("subject").equals("Mediamatik") || session.getAttribute("subject").equals("Plattformentwicklung")) || session.getAttribute("description").equals("") || session.getAttribute("startdate").equals("") || session.getAttribute("rotationsites").equals("") || session.getAttribute("years").equals("") || session.getAttribute("technologies").equals("") ||session.getAttribute("language").equals("")|| session.getAttribute("enddate").equals("") ) {
             request.setAttribute("error", true);
 
             session.removeAttribute("name");
@@ -61,7 +63,8 @@ public class AddPracticeplaceToDBServlet extends HttpServlet {
             session.removeAttribute("enddate");
             session.removeAttribute("years");
             session.removeAttribute("rotationsites");
-            session.removeAttribute("kindOfDeployment"); 
+            session.removeAttribute("kindOfDeployment");
+            session.removeAttribute("shortDescription");
 
             request.getRequestDispatcher("/AddPracticeplace").forward(request, response);
         } else {
@@ -78,13 +81,14 @@ public class AddPracticeplaceToDBServlet extends HttpServlet {
                 String place = (String) session.getAttribute("place");
                 String zip = (String) session.getAttribute("zip");
                 String description = (String) session.getAttribute("description");
+                String shortDescription = (String) session.getAttribute("shortDescription");
                 String[] startDate = ((String) session.getAttribute("startdate")).split("\\.");
                 String[] enddate = ((String) session.getAttribute("enddate")).split("\\.");
 
                 String kindOfDeployment = null;
 
                 if (session.getAttribute("kindOfDeployment") != null)
-                kindOfDeployment = ((String) session.getAttribute("kindOfDeployment"));
+                    kindOfDeployment = ((String) session.getAttribute("kindOfDeployment"));
 
                 String[] yearsA = ((String) session.getAttribute("years")).split(",");
                 int rotationsites = Integer.parseInt(((String) session.getAttribute("rotationsites")).replaceAll("\\s+", ""));
@@ -100,6 +104,7 @@ public class AddPracticeplaceToDBServlet extends HttpServlet {
                 session.removeAttribute("place");
                 session.removeAttribute("zip");
                 session.removeAttribute("description");
+                session.removeAttribute("shortDescription");
                 session.removeAttribute("startdate");
                 session.removeAttribute("enddate");
                 session.removeAttribute("years");
@@ -128,8 +133,8 @@ public class AddPracticeplaceToDBServlet extends HttpServlet {
                         }
                     }
                     for (String language : languages) {
-                            Language l = new Language(xss.hsc(language), p);
-                            p.getLanguages().add(l);
+                        Language l = new Language(xss.hsc(language), p);
+                        p.getLanguages().add(l);
                     }
                     p.setStreet(street);
                     p.setRotationsites(rotationsites);
@@ -137,6 +142,7 @@ public class AddPracticeplaceToDBServlet extends HttpServlet {
                     p.setPlace(place);
                     p.setZip(zip);
                     p.setDescription(description);
+                    p.setShortDescription(shortDescription);
                     p.setKindOfDeployment(kindOfDeployment);
 
                     //Replaces all spaces (space can cause a paresException)
@@ -171,7 +177,7 @@ public class AddPracticeplaceToDBServlet extends HttpServlet {
                     }
                 } else {
                     //response.sendRedirect("AddPracticeplace");
-                	request.setAttribute("error", true);
+                    request.setAttribute("error", true);
 
                     request.getRequestDispatcher("/AddPracticeplace").forward(request, response);
                 }

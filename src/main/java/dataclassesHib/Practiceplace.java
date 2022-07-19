@@ -28,6 +28,8 @@ public class Practiceplace {
     private String zip;
     private int rotationsites;
     private int archived;
+
+
 //...
     @Column(name = "designation")
     private String place;
@@ -46,6 +48,8 @@ public class Practiceplace {
     private String imageType;
 
     private String kindOfDeployment;
+
+    private String shortDescription;
 
     @Column(columnDefinition = "image")
     private byte[] image;
@@ -85,7 +89,7 @@ public class Practiceplace {
 
     public Practiceplace() {
     }
-    public Practiceplace(String name, String subject, String zip, String place, LocalDate start, LocalDate end, String description, String street, String streetNr, byte[] image, Educator educator, List<Integer> apprenticeYears, List<Requirement> requirements, List<Technology> technologies, List<Language> languages, List<Application> applications, List<Apprentice> favoritesApprenticePP, int rotationsites, String kindOfDeployment,int archived) {
+    public Practiceplace(String name, String subject, String zip, String place, LocalDate start, LocalDate end, String description, String street, String streetNr, byte[] image, Educator educator, List<Integer> apprenticeYears, List<Requirement> requirements, List<Technology> technologies, List<Language> languages, List<Application> applications, List<Apprentice> favoritesApprenticePP, int rotationsites, String kindOfDeployment,int archived, String shortDescription) {
         this.name = name;
         this.subject = subject;
         this.zip = zip;
@@ -94,6 +98,7 @@ public class Practiceplace {
         this.end = end;
         this.description = description;
         this.kindOfDeployment = kindOfDeployment;
+        this.shortDescription = shortDescription;
 
         int maxChars = 100;
 
@@ -356,6 +361,13 @@ public class Practiceplace {
     }
 
     public void setEnd(Date date) {
+    }
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
+    }
+
+    public String getShortDescription(){
+        return shortDescription;
     }
 
 }

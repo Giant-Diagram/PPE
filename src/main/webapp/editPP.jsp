@@ -83,7 +83,18 @@
                     <span class="requiredfields">*</span>
                 </label>
             </div>
+            <!-- TEXTAREA FOR THE shortDESCRIPTION OF THE PRACTICEPLACE Jenaya -->
+            <div class="col form-floating mb-3">
+                    <textarea maxlength="200" name="shortDescription" id="shortDescription"
+                              class="form-control addPractice"></textarea>
+                <c:set var="shortDescription" scope="session" value="${sessionScope.editPP.shortDescription}"/>
 
+                <label for="shortDescription" class="label">Kurzbeschreibung für die Startseite
+                    <span class="requiredfields">*</span>
+                </label>
+                ${200 - sessionScope.editPP.shortDescription.length()}
+                </span>
+            </div>
             <!-- TEXTAREA FOR THE DESCRIPTION OF THE PRACTICEPLACE -->
             <div class="col form-floating mb-3">
                     <textarea maxlength="2000" name="description" id="description"
@@ -461,7 +472,7 @@
                 Pflichtfelder</label>
             <br>
             <br>
-
+            <script src="JavaScript/tooltip.js"></script>
             <div class="col form-floating mb-3">
                 <div class="row">
                     <div class="col-6 resetbutton">
