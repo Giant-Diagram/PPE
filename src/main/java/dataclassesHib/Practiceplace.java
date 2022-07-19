@@ -28,7 +28,7 @@ public class Practiceplace {
     private String zip;
     private int rotationsites;
     private int archived;
-
+//
     @Column(name = "designation")
     private String place;
 
